@@ -26,6 +26,12 @@ body.page-loaded {
   margin-bottom: 1.1rem !important;
 }
 
+/* Menu molto vicino al titolo */
+#content-panel aside {
+  margin-top: 0.25rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
 #menu-main {
   margin-bottom: 0.5rem !important;
 }
