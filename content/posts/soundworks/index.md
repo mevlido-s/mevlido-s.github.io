@@ -1,5 +1,4 @@
 ---
-title: "sound works"
 layout: plain
 images: ["/images/0014_15A000074780014.jpg"]
 

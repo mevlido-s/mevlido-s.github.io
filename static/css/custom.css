@@ -22,12 +22,12 @@ body.page-loaded {
 
 /* More space in header */
 #site-title {
-  margin-top: 2rem !important;
-  margin-bottom: 2rem !important;
+  margin-top: 1.1rem !important;
+  margin-bottom: 1.1rem !important;
 }
 
 #menu-main {
-  margin-bottom: 2rem !important;
+  margin-bottom: 0.5rem !important;
 }
 
 #content-panel hr {
