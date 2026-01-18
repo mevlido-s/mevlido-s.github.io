@@ -81,19 +81,52 @@ tutto ciò sotto il sole: un soffio (2023)
 
 
 
-
 <script>
 
+let isNavigating = false;
+
+
 document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(() => {
-    requestAnimationFrame(() => {
-      document.body.classList.add('page-loaded');
+  if (!isNavigating) {
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        document.body.classList.add('page-loaded');
+      });
+    }, 20);
+  }
+  
+  
+  const video = document.getElementById('video-background');
+  if (video) {
+    video.addEventListener('loadeddata', function() {
+      video.classList.add('loaded');
     });
-  }, 20); 
+    if (video.readyState >= 3) {
+      video.classList.add('loaded');
+    }
+  }
 });
 
 window.addEventListener('load', function() {
   document.body.classList.add('page-loaded');
+  
+  const video = document.getElementById('video-background');
+  if (video) video.classList.add('loaded');
+});
+
+
+window.addEventListener('pageshow', function(event) {
+  
+  if (event.persisted) {
+    isNavigating = false;
+    document.body.classList.add('page-loaded');
+    const video = document.getElementById('video-background');
+    if (video) video.classList.add('loaded');
+  }
+});
+
+window.addEventListener('pagehide', function() {
+  isNavigating = true;
 });
 
 
@@ -114,11 +147,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       e.preventDefault();
+      isNavigating = true;
+      
+      
+      const video = document.getElementById('video-background');
+      if (video) video.classList.remove('loaded');
+      
+      
       document.body.classList.remove('page-loaded');
       
       setTimeout(() => {
         window.location.href = href;
-      }, 150); 
+      }, 150);
     });
   });
 });

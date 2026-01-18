@@ -75,19 +75,52 @@ Categories | mevlido / Simone Spampinato
 
 
 
-
 <script>
 
+let isNavigating = false;
+
+
 document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(() => {
-    requestAnimationFrame(() => {
-      document.body.classList.add('page-loaded');
+  if (!isNavigating) {
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        document.body.classList.add('page-loaded');
+      });
+    }, 20);
+  }
+  
+  
+  const video = document.getElementById('video-background');
+  if (video) {
+    video.addEventListener('loadeddata', function() {
+      video.classList.add('loaded');
     });
-  }, 20); 
+    if (video.readyState >= 3) {
+      video.classList.add('loaded');
+    }
+  }
 });
 
 window.addEventListener('load', function() {
   document.body.classList.add('page-loaded');
+  
+  const video = document.getElementById('video-background');
+  if (video) video.classList.add('loaded');
+});
+
+
+window.addEventListener('pageshow', function(event) {
+  
+  if (event.persisted) {
+    isNavigating = false;
+    document.body.classList.add('page-loaded');
+    const video = document.getElementById('video-background');
+    if (video) video.classList.add('loaded');
+  }
+});
+
+window.addEventListener('pagehide', function() {
+  isNavigating = true;
 });
 
 
@@ -108,11 +141,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       e.preventDefault();
+      isNavigating = true;
+      
+      
+      const video = document.getElementById('video-background');
+      if (video) video.classList.remove('loaded');
+      
+      
       document.body.classList.remove('page-loaded');
       
       setTimeout(() => {
         window.location.href = href;
-      }, 150); 
+      }, 150);
     });
   });
 });
@@ -207,6 +247,21 @@ Categories
                 
                 
                     About
+                
+                </a>
+                
+                    0
+                
+            
+            </li>
+        
+    
+        
+            <li>
+                <a href="http://localhost:1313/ancorati/">
+                
+                
+                    ancorati alla sabbia
                 
                 </a>
                 
@@ -318,6 +373,21 @@ Categories
                                     
                                         <img src="http://localhost:1313/about/IMG_1122_hu_912f43cff22e8500.jpg" alt="About" />
                                         <figcaption><h3>About</h3></figcaption>
+                                    
+                                </a>
+                            </li>
+                        
+                    
+                        
+                        
+                            
+                            
+                            
+                            <li>
+                                <a href="http://localhost:1313/ancorati/" class="c4-izmir" title="ancorati alla sabbia">
+                                    
+                                        <img src="http://localhost:1313/ancorati/output_hu_b714157c03b4668c.jpg" alt="ancorati alla sabbia" />
+                                        <figcaption><h3>ancorati alla sabbia</h3></figcaption>
                                     
                                 </a>
                             </li>

@@ -6,7 +6,7 @@ images: ["/images/0014_15A000074780014.jpg"]
 ---
 
 
-[ancorati alla sabbia (2025)](/ancorati/)
+[ancorati alla sabbia (2025)](ancorati/)
 
 [W (2025)](/posts/soundworks/W/)
 
