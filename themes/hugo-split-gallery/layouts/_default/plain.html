@@ -11,6 +11,14 @@
       <div class="background-image-overlay" style="background-image: url('{{ $imagePath }}');"></div>
     {{ end }}
     
+    {{ $copyright := .Param "mediaCopyright" }}
+    {{ $copyrightColor := .Param "copyrightColor" | default "#ffffff" }}
+    {{ if $copyright }}
+      <div class="media-copyright" style="color: {{ $copyrightColor }};">
+        {{ $copyright | safeHTML }}
+      </div>
+    {{ end }}
+    
     <div class="container-fluid h-100 p-0">
     </div>
   </div>
