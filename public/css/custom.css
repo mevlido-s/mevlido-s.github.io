@@ -130,7 +130,7 @@ body.page-loaded .col-lg-6:not(#content-panel) {
 
 /* Slow pan animation on the gallery */
 .col-lg-6:not(#content-panel) {
-  animation: slowPan 12s ease-in-out infinite alternate;
+  animation: slowPan 20s ease-in-out infinite alternate;
 }
 
 @keyframes slowPan {
@@ -138,7 +138,7 @@ body.page-loaded .col-lg-6:not(#content-panel) {
     transform: scale(1.05) translateY(0);
   }
   100% {
-    transform: scale(1.08) translateY(-2%);
+    transform: scale(1.08) translateY(-0.2%);
   }
 }
 
