@@ -1,0 +1,7 @@
+{{ $linkToCover := "" }}
+{{ $resized := .Resize "1920x q70" }}
+{{ $img := $resized | images.Filter (images.GaussianBlur 30) (images.Brightness -30) }}
+{{ with $img }}
+    {{ $linkToCover = .Permalink }}
+{{ end }}
+{{ return $linkToCover }}
