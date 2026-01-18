@@ -1,40 +1,38 @@
-/* Page Transitions - Smoother fade-in */
+/* Page Transitions */
 body {
   background-color: #72561d;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
   font-family: 'Atkinson Hyperlegible', sans-serif !important;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.6;
 }
 
-/* Fade everything inside content-panel container except title and menu */
-#content-panel .container > *:not(#site-title):not(aside) {
-  opacity: 0;
-  transition: opacity 0.15s ease-in;
-}
-
-body.page-loaded #content-panel .container > *:not(#site-title):not(aside) {
+body.page-loaded {
   opacity: 1;
-  transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
-/* Force site title and menu to stay visible */
+/* Keep site title visible during transitions */
 #site-title,
-#site-title *,
-aside,
-aside * {
+#site-title a,
+.lead {
   opacity: 1 !important;
   transition: none !important;
 }
 
-/* Fade the gallery column */
-.col-lg-6:not(#content-panel) {
-  opacity: 0;
-  transition: opacity 0.15s ease-in;
+/* More space in header */
+#site-title {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
 }
 
-body.page-loaded .col-lg-6:not(#content-panel) {
-  opacity: 1;
-  transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+#menu-main {
+  margin-bottom: 2rem !important;
+}
+
+#content-panel hr {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
 }
 
 /* Force font on all elements */
@@ -56,7 +54,35 @@ p {
   line-height: 1.6;
 }
 
-/* Grain Effect */
+/* Video background styles with fade support */
+#video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(30px) brightness(0.7);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+#video-background.loaded {
+  opacity: 1;
+}
+
+#gallery-panel {
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  #video-background {
+    width: 100%;
+  }
+}
+
+/* Grain Effect - on html element so it doesn't fade */
 @keyframes grain1 {
   0%, 100% { transform: translate(0, 0); }
   50% { transform: translate(-5%, -10%); }
@@ -75,7 +101,7 @@ html::after {
   left: -50%;
   width: 200%;
   height: 200%;
-  opacity: 0.20;
+  opacity: 0.17;
   z-index: 9999;
   pointer-events: none;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 2000 2000' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='6' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
@@ -89,14 +115,14 @@ html::after {
   animation: grain2 6s steps(12) infinite reverse;
 }
 
-/* Link Styles */
+/* Link Styles - Unified */
 a,
+a:link,
+#menu-main a,
+.list-inline a,
+#content-panel a,
 button.btn {
   color: #000000 !important;
-}
-
-a:link {
-  color: #e3e8ed !important;
 }
 
 a:visited {
@@ -104,6 +130,9 @@ a:visited {
 }
 
 a:hover,
+#menu-main a:hover,
+.list-inline a:hover,
+#content-panel a:hover,
 button.btn:hover {
   color: #e6f2ff !important;
 }
@@ -115,51 +144,4 @@ a:active {
 /* Hide Credit */
 .split-credit {
   display: none;
-}
-
-/* Slow subtle movement on gallery images */
-.col-lg-6:not(#content-panel) {
-  opacity: 0;
-  transition: opacity 0.15s ease-in;
-}
-
-body.page-loaded .col-lg-6:not(#content-panel) {
-  opacity: 1;
-  transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-
-/* Slow pan animation on the gallery */
-.col-lg-6:not(#content-panel) {
-  animation: slowPan 20s ease-in-out infinite alternate;
-}
-
-@keyframes slowPan {
-  0% {
-    transform: scale(1.05) translateY(0);
-  }
-  100% {
-    transform: scale(1.08) translateY(-0.2%);
-  }
-}
-
-/* Video background styles */
-#video-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(30px) brightness(0.7);
-  z-index: -1;
-}
-
-#gallery-panel {
-  position: relative;
-}
-
-@media (max-width: 991px) {
-  #video-background {
-    width: 100%;
-  }
 }
