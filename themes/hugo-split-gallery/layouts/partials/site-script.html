@@ -23,19 +23,52 @@
 <script src="{{ relURL (.) }}"></script>
 {{ end }}
 
-
 <script>
-// Ensure content starts hidden, then fade in quickly
+// Handle page transitions including back/forward navigation
+let isNavigating = false;
+
+// Trigger fade-in as early as possible
 document.addEventListener('DOMContentLoaded', function() {
-  setTimeout(() => {
-    requestAnimationFrame(() => {
-      document.body.classList.add('page-loaded');
+  if (!isNavigating) {
+    setTimeout(() => {
+      requestAnimationFrame(() => {
+        document.body.classList.add('page-loaded');
+      });
+    }, 20);
+  }
+  
+  // Fade in video if present
+  const video = document.getElementById('video-background');
+  if (video) {
+    video.addEventListener('loadeddata', function() {
+      video.classList.add('loaded');
     });
-  }, 20); // Reduced from 50ms to 20ms
+    if (video.readyState >= 3) {
+      video.classList.add('loaded');
+    }
+  }
 });
 
 window.addEventListener('load', function() {
   document.body.classList.add('page-loaded');
+  
+  const video = document.getElementById('video-background');
+  if (video) video.classList.add('loaded');
+});
+
+// Handle browser back/forward buttons
+window.addEventListener('pageshow', function(event) {
+  // Reset state when page is shown from cache (back button)
+  if (event.persisted) {
+    isNavigating = false;
+    document.body.classList.add('page-loaded');
+    const video = document.getElementById('video-background');
+    if (video) video.classList.add('loaded');
+  }
+});
+
+window.addEventListener('pagehide', function() {
+  isNavigating = true;
 });
 
 // Handle link clicks
@@ -56,11 +89,18 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       e.preventDefault();
+      isNavigating = true;
+      
+      // Fade out video
+      const video = document.getElementById('video-background');
+      if (video) video.classList.remove('loaded');
+      
+      // Fade out body
       document.body.classList.remove('page-loaded');
       
       setTimeout(() => {
         window.location.href = href;
-      }, 150); // Reduced from 200ms to 150ms
+      }, 150);
     });
   });
 });
