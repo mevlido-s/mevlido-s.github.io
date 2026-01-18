@@ -28,7 +28,7 @@ body.page-loaded {
 
 /* Menu molto vicino al titolo */
 #content-panel aside {
-  margin-top: 0.25rem !important;
+  margin-top: 0.1rem !important;
   margin-bottom: 0.5rem !important;
 }
 
