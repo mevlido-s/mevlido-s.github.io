@@ -18,7 +18,7 @@ images: ["/images/0014_15A000074780014.jpg"]
 
 [del nostro scavo continuo (2024)](/posts/soundworks/delnostroscavocontinuo) 
 
-[an oath: of desert and sea (2024)](/posts/soundworks/an_oath) 
+[an oath: of desert and sea (2024)](an_oath) 
 
 il canto delle cicale è un canto di pietra (2024)
 
