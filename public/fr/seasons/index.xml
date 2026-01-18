@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seasons on Site exemple du thème Hugo Split Gallery</title>
+    <link>http://localhost:1313/fr/seasons/</link>
+    <description>Recent content in Seasons on Site exemple du thème Hugo Split Gallery</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <copyright>&amp;copy;2021-2022 Me</copyright>
+    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/fr/seasons/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fall</title>
+      <link>http://localhost:1313/fr/seasons/fall/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fr/seasons/fall/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring</title>
+      <link>http://localhost:1313/fr/seasons/spring/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fr/seasons/spring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Summer</title>
+      <link>http://localhost:1313/fr/seasons/summer/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fr/seasons/summer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Winter</title>
+      <link>http://localhost:1313/fr/seasons/winter/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/fr/seasons/winter/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

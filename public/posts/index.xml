@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PROJECTS on Simone Spampinato</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in PROJECTS on Simone Spampinato</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&amp;copy;2021-2022 Me</copyright>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sound works</title>
+      <link>http://localhost:1313/posts/soundworks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/soundworks/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/ancorati/&#34;&gt;ancorati alla sabbia (2025)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/W/&#34;&gt;W (2025)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/ourHymns&#34;&gt;our hymns (2025)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/GentleFireBasel&#34;&gt;Gentle Fire Basel (2021-2025)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/minor_angel&#34;&gt;minor angel n.1 (2024)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/delnostroscavocontinuo&#34;&gt;del nostro scavo continuo (2024)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/an_oath&#34;&gt;an oath: of desert and sea (2024)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;il canto delle cicale è un canto di pietra (2024)&lt;/p&gt;&#xA;&lt;p&gt;tutto ciò sotto il sole: un soffio (2023)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>visuals</title>
+      <link>http://localhost:1313/posts/visuals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/visuals/</guid>
+      <description>&lt;p&gt;ancorati alla sabbia (2025)&lt;/p&gt;&#xA;&lt;p&gt;W (2025)&lt;/p&gt;&#xA;&lt;p&gt;post exotic dream n.2: our hymns (2025)&lt;/p&gt;&#xA;&lt;p&gt;Gentle Fire Basel (2021-2025)&lt;/p&gt;&#xA;&lt;p&gt;minor angel n.1 (2024)&lt;/p&gt;&#xA;&lt;p&gt;del nostro scavo continuo (2024)&lt;/p&gt;&#xA;&lt;p&gt;an oath: of desert and sea (2024)&lt;/p&gt;&#xA;&lt;p&gt;il canto delle cicale è un canto di pietra (2024)&lt;/p&gt;&#xA;&lt;p&gt;tutto ciò sotto il sole: un soffio (2023)&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

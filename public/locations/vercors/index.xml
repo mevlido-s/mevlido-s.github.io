@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vercors on Hugo Split Gallery theme sample site</title>
+    <link>http://localhost:1313/locations/vercors/</link>
+    <description>Recent content in Vercors on Hugo Split Gallery theme sample site</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&amp;copy;2021-2022 Me</copyright>
+    <lastBuildDate>Sun, 14 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/locations/vercors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Grand Veymont</title>
+      <link>http://localhost:1313/posts/grand-veymont/</link>
+      <pubDate>Sun, 14 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/grand-veymont/</guid>
+      <description>&lt;p&gt;Seeing my first ibex!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
