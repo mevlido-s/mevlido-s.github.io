@@ -172,3 +172,30 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+
+#gallery-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+#bg-video,
+.background-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.background-image-overlay {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#gallery-panel .container-fluid {
+  position: relative;
+  z-index: 1;
+}

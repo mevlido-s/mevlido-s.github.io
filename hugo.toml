@@ -47,13 +47,13 @@ largeImageSize = "1920x q80"
     [languages.en.menu]
       [[languages.en.menu.main]]
         identifier = "about"
-        name = "About"
+        name = "about"
         url = "/about/"
         weight = -110
 
       [[languages.en.menu.main]]
         identifier = "contact"
-        name = "Contact"
+        name = "contact"
         url = "/contact/"
         weight = -100
 
