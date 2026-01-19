@@ -5,7 +5,8 @@ mediaCopyright: "© 2025 蘇子齊 Tzuchi Su for gentle fire basel, DITO Publish
 copyrightColor: "#ffffff"
 ---
 *Let the first page of the book be traced in red, for the wound is invisible where it starts.* 
-Reb Alcé, from the book of questions of edmond jabés
+
+reb alcé, from the book of questions of edmond jabés
 
 <div>
 
@@ -13,7 +14,7 @@ Reb Alcé, from the book of questions of edmond jabés
 
 [visual works](posts/visuals/)
 
-[publication](posts/other-post/)
+[publications](posts/publications/)
 
-[side projects](posts/lake-lauvitel/)
+[other projects](posts/lake-lauvitel/)
 
