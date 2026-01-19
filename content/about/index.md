@@ -6,22 +6,35 @@ layout: "plain"
 
 I am a constellation of quotes, and I do not think nothing more: 
 
-«Come l'anima nostra, che è aria, ci sostiene, così il soffio e l'aria circondano il mondo intero.»
 
-Its goal the river knows,  
-  Dewdrops find a way,  
-Sunlight cheers the rose  
-  In her day:  
-Shall I, lone sorrow past,  
-Find thee at the last?  
-  Sorrow past,  
-  Thee at last?
+*«Come l'anima nostra, che è aria, ci sostiene, così il soffio e l'aria circondano il mondo intero.»*
 
- In questo senso, non c’è silenzio se non scritto, riserbo lacerato, ==taglio che rende impossibile il dettaglio.==
+*Its goal the river knows,*  
+*Dewdrops find a way,*
+*Sunlight cheers the rose*  
+*In her day:*  
+*Shall I, lone sorrow past,*
+*Find thee at the last?*  
+  *Sorrow past,*  
+  *Thee at last?*
+ H.D., “Eurydice”
 
- Ti canteremo noi cipressi i cori
-Che vanno eterni fra la terra e il cielo
+*In questo senso, non c’è silenzio se non scritto, riserbo lacerato, ==taglio che rende impossibile il dettaglio.*
+
+ *Ti canteremo noi cipressi i cori*
+*Che vanno eterni fra la terra e il cielo*
 Carducci
+
+*“Le souvenir s’éloigne mais il revient,*
+*C’est un homme et une femme masqués, on dirait*
+*qu’ils tentent*
+*De mettre à flot une barque trop grande.*
+*Le vent rabat la voile sur leurs gestes,*
+*Le feu prend dans la voile, l’eau est noire,*
+*Que faire de tes dons, ô souvenir,”*
+
+Yves Bonnefoy
+
 
 _It is quite useful to distinguish mankind’s love of musical expression from mankind’s supposed love of music._  
 —Gil Sansón  
