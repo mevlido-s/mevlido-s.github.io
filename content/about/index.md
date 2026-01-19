@@ -31,6 +31,17 @@ _It is quite useful to distinguish mankind’s love of musical expression from m
 
 Nos animaux préférés - Antoine Volodine
 
+So you have swept me back,
+I who could have walked with the live souls
+above the earth,
+I who could have slept among the live flowers
+at last;
+
+so for your arrogance
+and your ruthlessness
+I am swept back
+where dead lichens drip
+dead cinders upon moss of ash;
 
 “Il volto, afferma Lévinas, è "ciò che mi ordina di servire l 'altro", "ciò che mi vieta di uccidere",” 
 (Bourriaud, 2020, p. 24)
