@@ -4,23 +4,8 @@ layout: "plain"
 mediaCopyright: "© 2025 蘇子齊 Tzuchi Su for gentle fire basel, DITO Publishing"
 copyrightColor: "#ffffff"
 ---
-non è per l'inizio ma perché le cose finiscono.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*Let the first page of the book be traced in red, for the wound is invisible where it starts.* 
+Reb Alcé, from the book of questions of edmond jabés
 
 <div>
 

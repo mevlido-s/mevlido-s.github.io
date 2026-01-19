@@ -160,6 +160,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
     
 
@@ -263,6 +265,18 @@ CV (PDF)">
 
     </div>
   </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        closeButton: true,
+        slideEffect: 'fade'
+      });
+    });
+  </script>
 </body>
 
 </html>

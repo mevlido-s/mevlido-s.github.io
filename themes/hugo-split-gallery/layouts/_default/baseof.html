@@ -15,6 +15,8 @@
   {{ partial "site-style.html" . }}
   {{ partial "site-script.html" . }}
   {{ partial "custom-head.html" . }}
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
   {{ if .Site.Params.favicon }}<link rel="shortcut icon" href="{{ relURL ($.Site.Params.favicon) }}" type="image/x-icon" />{{ end }}  
 
@@ -101,6 +103,20 @@
       {{ block "gallery" . }}{{ end }}
     </div>
   </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = GLightbox({
+      touchNavigation: true,
+      loop: true,
+      closeButton: true,
+      slideEffect: 'fade'
+      // RIMUOVI: width: '80vw',
+      // RIMUOVI: height: '80vh'
+    });
+  });
+</script>
 </body>
 
 </html>

@@ -1,0 +1,9 @@
+<div class="gallery-grid">
+  {{ $images := split (.Get "images") "," }}
+  {{ range $images }}
+    {{ $img := trim . " " }}
+    <a href="{{ $img }}" class="glightbox">
+      <img src="{{ $img }}" alt="{{ $img }}">
+    </a>
+  {{ end }}
+</div>

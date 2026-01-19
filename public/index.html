@@ -158,6 +158,8 @@ document.addEventListener('DOMContentLoaded', function() {
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
     
 
@@ -171,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <meta property="og:url" content="http://localhost:1313/">
   <meta property="og:site_name" content="mevlido / simone spampinato">
   <meta property="og:title" content="mevlido / simone spampinato">
-  <meta property="og:description" content="non è per l’inizio ma perché le cose finiscono.
+  <meta property="og:description" content="Let the first page of the book be traced in red, for the wound is invisible where it starts. Reb Alcé, from the book of questions of edmond jabés
 sound works
 visual works
 publication
@@ -182,7 +184,7 @@ side projects">
 <meta itemprop="description" content="Photo gallery inspired by Hugo Split Theme"><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://localhost:1313/posts/soundworks/images/0014_15A000074780014_hu_2394a763daff4161.jpg"/>
   <meta name="twitter:title" content="mevlido / simone spampinato">
-  <meta name="twitter:description" content="non è per l’inizio ma perché le cose finiscono.
+  <meta name="twitter:description" content="Let the first page of the book be traced in red, for the wound is invisible where it starts. Reb Alcé, from the book of questions of edmond jabés
 sound works
 visual works
 publication
@@ -224,7 +226,8 @@ side projects">
 
           <div class="split-bio my-2">
             
-  <p>non è per l&rsquo;inizio ma perché le cose finiscono.</p>
+  <p><em>Let the first page of the book be traced in red, for the wound is invisible where it starts.</em>
+Reb Alcé, from the book of questions of edmond jabés</p>
 <!-- raw HTML omitted -->
 <p><a href="/posts/soundworks/">sound works</a></p>
 <p><a href="/posts/visuals/">visual works</a></p>
@@ -277,6 +280,20 @@ side projects">
 
     </div>
   </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = GLightbox({
+      touchNavigation: true,
+      loop: true,
+      closeButton: true,
+      slideEffect: 'fade'
+      
+      
+    });
+  });
+</script>
 </body>
 
 </html>
