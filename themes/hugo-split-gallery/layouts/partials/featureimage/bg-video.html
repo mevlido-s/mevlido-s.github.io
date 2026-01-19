@@ -1,13 +1,10 @@
 {{ $videoPath := false }}
 {{ $backgroundVideo := .Param "backgroundVideo" }}
-{{ warnf "backgroundVideo param: %v" $backgroundVideo }}
 {{ if $backgroundVideo }}
   {{ $page := partial "getdefaultlangpage.html" . }}
   {{ $video := $page.Resources.GetMatch $backgroundVideo }}
-  {{ warnf "Video resource found: %v" $video }}
   {{ if $video }}
     {{ $videoPath = $video.Permalink }}
-    {{ warnf "Video path: %v" $videoPath }}
   {{ else }}
     {{ $headlessBundle := partial "featureimage/shared.html" . }}
     {{ with .Site.GetPage $headlessBundle }}
