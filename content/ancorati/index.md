@@ -1,14 +1,16 @@
 ---
-title: "ancorati alla sabbia"
 images: ["output.jpg"]
 layout: plain
 ---
+ancorati alla sabbia
 
-ssss    sdsjkdhpajsbd as
+for violin, accordion, bells and live electronics
 
-a
-sd 
-asd 
-aspd a
-s das
-d
+
+
+score: 
+
+{{< gallery
+  "image_score1.jpg"
+  "images/score1.jpg"
+>}}

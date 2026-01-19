@@ -10,6 +10,13 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
+      <link>http://localhost:1313/ancorati/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/ancorati/</guid>
+      <description>&lt;p&gt;ancorati alla sabbia&lt;/p&gt;&#xA;&lt;p&gt;for violin, accordion, bells and live electronics&lt;/p&gt;&#xA;&lt;p&gt;score:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>http://localhost:1313/posts/soundworks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/soundworks/</guid>
@@ -21,13 +28,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;I was born&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>ancorati alla sabbia</title>
-      <link>http://localhost:1313/ancorati/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/ancorati/</guid>
-      <description>&lt;p&gt;ssss    sdsjkdhpajsbd as&lt;/p&gt;&#xA;&lt;p&gt;a&#xA;sd&#xA;asd&#xA;aspd a&#xA;s das&#xA;d&lt;/p&gt;</description>
     </item>
     <item>
       <title>Contact</title>
