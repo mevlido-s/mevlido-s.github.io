@@ -2,6 +2,8 @@
 title: ""
 images: ["IMG_1122.jpg"]
 layout: "plain"
+mediaCopyright: "@ Ivan Liuzzo"
+copyrightColor: "#ffffff"
 ---
 
 I have no substance beyond quotes that made the person I am:
