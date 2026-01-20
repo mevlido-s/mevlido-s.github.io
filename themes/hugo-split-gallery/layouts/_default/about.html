@@ -1,0 +1,264 @@
+{{ define "main_content" }}
+<style>
+.constellation {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem 0;
+  overflow: hidden;
+}
+
+.quote-fragment {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1rem;
+  max-width: 600px;
+  transition: all 0.3s ease;
+}
+
+.quote-fragment em {
+  font-style: italic;
+  line-height: 1.8;
+  display: block;
+}
+
+.quote-fragment mark {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 0 0.2em;
+}
+
+.author {
+  text-align: right;
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+}
+
+.intro {
+  font-size: 1.2em;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.archive-note {
+  font-size: 0.85em;
+  opacity: 0.6;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+/* Shape styles that will be randomly applied */
+.shape-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 3rem auto;
+}
+
+.shape-square {
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  margin: 3rem auto;
+}
+
+.shape-box {
+  max-width: 400px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  text-align: justify;
+  margin: 2rem auto;
+}
+
+.shape-centered-box {
+  max-width: 350px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.shape-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin: 2rem auto;
+  max-height: 400px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.shape-wide-box {
+  max-width: 500px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  padding: 2.5rem;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+/* Background shapes */
+.bg-shape {
+  position: absolute;
+  opacity: 0.08;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-shape.circle {
+  border-radius: 50%;
+  border: 2px solid currentColor;
+}
+
+.bg-shape.square {
+  border: 2px solid currentColor;
+}
+
+.bg-shape.line {
+  height: 2px;
+  background-color: currentColor;
+}
+</style>
+
+<div class="constellation">
+  <p class="intro">I am a constellation of quotes, and I do not think nothing more:</p>
+
+  <div class="quote-item" data-quote="0">
+    <em>«Come l'anima nostra, che è aria, ci sostiene, così il soffio e l'aria circondano il mondo intero.»</em>
+  </div>
+
+  <div class="quote-item" data-quote="1">
+    <em>Its goal the river knows, Dewdrops find a way, Sunlight cheers the rose In her day: Shall I, lone sorrow past, Find thee at the last? Sorrow past, Thee at last?</em>
+    <div class="author">— H.D., "Eurydice"</div>
+  </div>
+
+  <div class="quote-item" data-quote="2">
+    <em>In questo senso, non c'è silenzio se non scritto, riserbo lacerato, <mark>taglio che rende impossibile il dettaglio.</mark></em>
+  </div>
+
+  <div class="quote-item" data-quote="3">
+    <em>Ti canteremo noi cipressi i cori<br>
+    Che vanno eterni fra la terra e il cielo</em>
+    <div class="author">— Carducci</div>
+  </div>
+
+  <div class="quote-item" data-quote="4">
+    <em>Le souvenir s'éloigne mais il revient, C'est un homme et une femme masqués, on dirait qu'ils tentent De mettre à flot une barque trop grande. Le vent rabat la voile sur leurs gestes, Le feu prend dans la voile, l'eau est noire, Que faire de tes dons, ô souvenir,</em>
+    <div class="author">— Yves Bonnefoy</div>
+  </div>
+
+  <div class="quote-item" data-quote="5">
+    <em>It is quite useful to distinguish mankind's love of musical expression from mankind's supposed love of music.</em>
+    <div class="author">— Gil Sansón</div>
+  </div>
+
+  <div class="quote-item" data-quote="6">
+    <em>C'est dans l'espace de l'épave que tu prendras refuge, c'est là que tu feras mine de voguer comme autrefois encore, là que sans auditeur pour te croire tu diras avoir trouvé les trois précieux refuges : le refuge du fer émietté, en train de mourir ; le refuge du friselis sans écume, matinal ou vespéral, loin ; le refuge de la clarté venant des tréfonds, qui a été longuement brassée par la mer.</em>
+    <div class="author">— Nos animaux préférés, Antoine Volodine</div>
+  </div>
+
+  <div class="quote-item" data-quote="7">
+    <em>So you have swept me back, I who could have walked with the live souls above the earth, I who could have slept among the live flowers at last; so for your arrogance and your ruthlessness I am swept back where dead lichens drip dead cinders upon moss of ash;</em>
+  </div>
+
+  <div class="quote-item" data-quote="8">
+    <em>Il volto, afferma Lévinas, è "ciò che mi ordina di servire l'altro", "ciò che mi vieta di uccidere"</em>
+    <div class="author">— Bourriaud, 2020, p. 24</div>
+  </div>
+
+  <div class="quote-item" data-quote="9">
+    <em>Quando il tempo non era ancora chiaro<br>
+    se un fronte nascosto è tra i rami di un albero<br>
+    in mezzo a quel piccolo lembo di luce nascosto tra le foglie<br>
+    abbiamo chiesto in ginocchio<br>
+    il nome della memoria</em>
+  </div>
+
+  <p class="archive-note">(archive)</p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const quoteItems = document.querySelectorAll('.quote-item');
+  const constellation = document.querySelector('.constellation');
+  
+  // Available shape classes
+  const shapeClasses = [
+    'shape-circle',
+    'shape-square', 
+    'shape-box',
+    'shape-centered-box',
+    'shape-vertical',
+    'shape-wide-box',
+    'quote-fragment', // normal style
+    'quote-fragment'  // increased chance for normal
+  ];
+  
+  // Randomly assign shapes to quotes
+  quoteItems.forEach((item) => {
+    // Pick a random shape
+    const randomShape = shapeClasses[Math.floor(Math.random() * shapeClasses.length)];
+    item.classList.add(randomShape);
+    
+    // Random transformations
+    const rotation = (Math.random() * 10) - 5;
+    const marginLeft = (Math.random() * 50) - 25; // -25% to +25%
+    const marginTop = (Math.random() * 6) - 3;
+    const opacity = 0.8 + (Math.random() * 0.2);
+    
+    item.style.transform = `rotate(${rotation}deg)`;
+    item.style.marginLeft = `${marginLeft}%`;
+    item.style.marginTop = `${marginTop}rem`;
+    item.style.opacity = opacity;
+    
+    // Additional randomization for non-shaped quotes
+    if (randomShape === 'quote-fragment') {
+      const fontSize = 0.85 + (Math.random() * 0.35);
+      const maxWidth = 350 + (Math.random() * 300);
+      item.style.fontSize = `${fontSize}em`;
+      item.style.maxWidth = `${maxWidth}px`;
+    }
+  });
+  
+  // Add random background shapes
+  const numShapes = 12 + Math.floor(Math.random() * 10);
+  
+  for (let i = 0; i < numShapes; i++) {
+    const shape = document.createElement('div');
+    shape.className = 'bg-shape';
+    
+    const shapeTypes = ['circle', 'square', 'line'];
+    const shapeType = shapeTypes[Math.floor(Math.random() * shapeTypes.length)];
+    shape.classList.add(shapeType);
+    
+    const top = Math.random() * 100;
+    const left = Math.random() * 100;
+    
+    shape.style.top = `${top}%`;
+    shape.style.left = `${left}%`;
+    
+    if (shapeType === 'circle' || shapeType === 'square') {
+      const size = 40 + Math.random() * 150;
+      shape.style.width = `${size}px`;
+      shape.style.height = `${size}px`;
+    } else {
+      const width = 60 + Math.random() * 250;
+      const rotation = Math.random() * 360;
+      shape.style.width = `${width}px`;
+      shape.style.transform = `rotate(${rotation}deg)`;
+    }
+    
+    constellation.appendChild(shape);
+  }
+});
+</script>
+
+{{ end }}

@@ -10,6 +10,13 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;I am a constellation of quotes, and I do not think nothing more:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;«Come l&amp;rsquo;anima nostra, che è aria, ci sostiene, così il soffio e l&amp;rsquo;aria circondano il mondo intero.»&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Anassimene&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Its goal the river knows,&lt;/em&gt;  / &lt;em&gt;Dewdrops find a way,&lt;/em&gt; / &lt;em&gt;Sunlight cheers the rose&lt;/em&gt;  / &lt;em&gt;In her day:&lt;/em&gt;  / &lt;em&gt;Shall I, lone sorrow past,&lt;/em&gt; / &lt;em&gt;Find thee at the last?&lt;/em&gt; / &lt;em&gt;Sorrow past,&lt;/em&gt;  / &lt;em&gt;Thee at last?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;C. Rossetti&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>http://localhost:1313/ancorati/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/ancorati/</guid>
@@ -21,13 +28,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/soundworks/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/ancorati/&#34;&gt;ancorati alla sabbia (2025)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/W/&#34;&gt;W (2025)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/ourHymns&#34;&gt;our hymns (2025)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/GentleFireBasel&#34;&gt;Gentle Fire Basel (2021-2025)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/minor_angel&#34;&gt;minor angel n.1 (2024)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/delnostroscavocontinuo&#34;&gt;del nostro scavo continuo (2024)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;an_oath&#34;&gt;an oath: of desert and sea (2024)&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;il canto delle cicale è un canto di pietra (2024)&lt;/p&gt;&#xA;&lt;p&gt;tutto ciò sotto il sole: un soffio (2023)&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>About</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;I was born&lt;/p&gt;</description>
     </item>
     <item>
       <title>Contact</title>
