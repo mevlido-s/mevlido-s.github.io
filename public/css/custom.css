@@ -258,3 +258,13 @@ body::-webkit-scrollbar {
 .gcontainer {
   max-width: none !important;
 }
+
+/* Back button styling */
+.back-link {
+  font-size: inherit;
+  opacity: 0.8;
+}
+
+.back-link:hover {
+  opacity: 1;
+}

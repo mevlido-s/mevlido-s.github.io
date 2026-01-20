@@ -50,15 +50,18 @@
           </p>
 
           {{ if or .Site.Menus.main (and .IsTranslated (default false ($.Site.Params.showTranslations))) }}
-            <aside class="mt-0 mb-2">
-              {{ if .Site.Menus.main }}
-                <ul class="list-inline" id="menu-main">
-                    {{ $currentPage := . }}
-                    {{ range .Site.Menus.main }}
-                        <li class="list-inline-item me-4"><a href="{{ .URL }}">{{ .Pre }}<span>{{ .Name }}</span></a></li>
-                    {{ end }}
-                </ul>
-              {{ end }}
+  <aside class="mt-0 mb-2">
+    {{ if .Site.Menus.main }}
+      <ul class="list-inline" id="menu-main">
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+              <li class="list-inline-item me-4"><a href="{{ .URL }}">{{ .Pre }}<span>{{ .Name }}</span></a></li>
+          {{ end }}
+          {{ if not .IsHome }}
+              <li class="list-inline-item me-4"><a href="javascript:history.back()" class="back-link">← Back</a></li>
+          {{ end }}
+      </ul>
+    {{ end }}
 
               {{ if and .IsTranslated (default false ($.Site.Params.showTranslations)) }}
                 {{ i18n "translations" }}: <ul class="list-inline d-inline" id="menu-translations">
