@@ -114,11 +114,11 @@ html::after {
 }
 
 html::before {
-  animation: grain1 4s steps(13) infinite;
+  animation: grain1 4s steps(9) infinite;
 }
 
 html::after {
-  animation: grain2 6s steps(12) infinite reverse;
+  animation: grain2 6s steps(5) infinite reverse;
 }
 
 /* Link Styles - Unified */
