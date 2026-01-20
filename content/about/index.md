@@ -4,7 +4,7 @@ images: ["IMG_1122.jpg"]
 layout: "plain"
 ---
 
-I am a constellation of quotes, and I do not think nothing more: 
+I have no substance beyond quotes that made the person I am:
 
 *So you have swept me back / I who could have walked with the live souls / above the earth, / I who could have slept among the live flowers / at last;*
 
@@ -20,7 +20,6 @@ Anassimene
 *Its goal the river knows,*  / *Dewdrops find a way,* / *Sunlight cheers the rose*  / *In her day:*  / *Shall I, lone sorrow past,* / *Find thee at the last?* / *Sorrow past,*  / *Thee at last?*
 
 C. Rossetti 
-
 
 *In questo senso, non c’è silenzio se non scritto, riserbo lacerato, taglio che rende impossibile il dettaglio.*
 
@@ -50,7 +49,7 @@ Gil Sansón
 A. Volodine
 
 
-“Il volto, afferma Lévinas, è "ciò che mi ordina di servire l 'altro", "ciò che mi vieta di uccidere” 
+*“Il volto, afferma Lévinas, è "ciò che mi ordina di servire l 'altro", "ciò che mi vieta di uccidere”*
 (Bourriaud, 2020, p. 24)
 
 
