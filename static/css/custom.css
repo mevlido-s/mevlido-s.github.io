@@ -114,7 +114,7 @@ html::after {
 }
 
 html::before {
-  animation: grain1 4s steps(22) infinite;
+  animation: grain1 4s steps(13) infinite;
 }
 
 html::after {
