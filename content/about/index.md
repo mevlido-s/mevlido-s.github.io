@@ -53,6 +53,6 @@ A. Volodine
 (Bourriaud, 2020, p. 24)
 
 
-*Quando il tempo non era ancora chiaro / se un fronte nascosto è tra i rami di un albero / in mezzo a quel piccolo lembo di luce /nascosto tra le foglie / abbiamo chiesto in ginocchio / il nome della momoria*
+*Quando il tempo non era ancora chiaro / se un fronte nascosto è tra i rami di un albero / in mezzo a quel piccolo lembo di luce / nascosto tra le foglie / abbiamo chiesto in ginocchio / il nome della momoria*
 (archive)
 
