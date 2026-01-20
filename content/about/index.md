@@ -17,8 +17,6 @@ H.D Laurance
 
 Anassimene
 
-
-
 *Its goal the river knows,*  / *Dewdrops find a way,* / *Sunlight cheers the rose*  / *In her day:*  / *Shall I, lone sorrow past,* / *Find thee at the last?* / *Sorrow past,*  / *Thee at last?*
 
 C. Rossetti 
@@ -37,6 +35,10 @@ U, Piersanti
 
 Yves Bonnefoy
 
+*My quietness has a man in it, he is transparent / and he carries me quietly, like a gondola, through the streets./ He has several likenesses, like stars and years, like numerals.*
+
+Frank O'Hara
+
 
 *It is quite useful to distinguish mankind’s love of musical expression from mankind’s supposed love of music.*
 
@@ -48,28 +50,10 @@ Gil Sansón
 A. Volodine
 
 
-“Il volto, afferma Lévinas, è "ciò che mi ordina di servire l 'altro", "ciò che mi vieta di uccidere",” 
+“Il volto, afferma Lévinas, è "ciò che mi ordina di servire l 'altro", "ciò che mi vieta di uccidere” 
 (Bourriaud, 2020, p. 24)
 
 
-
-
-
-
-
-
-
-
-
-
-Quando il tempo non era ancora chiaro 
-
-se un fronte nascosto è tra i rami di un albero 
-
-in mezzo a quel piccolo lembo di luce nascosto tra le foglie 
-
-abbiamo chiesto in ginocchio 
-
-il nome della momoria 
+*Quando il tempo non era ancora chiaro / se un fronte nascosto è tra i rami di un albero / in mezzo a quel piccolo lembo di luce /nascosto tra le foglie / abbiamo chiesto in ginocchio / il nome della momoria*
 (archive)
 
