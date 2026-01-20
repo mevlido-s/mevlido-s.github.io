@@ -263,6 +263,8 @@ body::-webkit-scrollbar {
 .back-link {
   font-size: inherit;
   opacity: 0.8;
+  transition: opacity 1s ease;
+  color:aliceblue;
 }
 
 .back-link:hover {

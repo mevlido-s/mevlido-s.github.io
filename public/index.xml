@@ -24,6 +24,13 @@
     </item>
     <item>
       <title></title>
+      <link>http://localhost:1313/posts/other-project/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/other-project/</guid>
+      <description>&lt;p&gt;l&amp;rsquo;écume des jours&lt;/p&gt;&#xA;&lt;p&gt;sensibili alle foglie&lt;/p&gt;&#xA;&lt;p&gt;tell your birds&lt;/p&gt;&#xA;&lt;p&gt;GGHELS&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>http://localhost:1313/posts/soundworks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/soundworks/</guid>

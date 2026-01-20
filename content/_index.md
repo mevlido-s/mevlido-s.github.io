@@ -16,5 +16,5 @@ reb alcé, from the book of questions of edmond jabés
 
 [publications](posts/publications/)
 
-[other projects](posts/lake-lauvitel/)
+[other projects](posts/other-project/)
 
