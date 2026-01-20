@@ -91,7 +91,7 @@ p {
 /* Grain Effect - on html element so it doesn't fade */
 @keyframes grain1 {
   0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(-5%, -10%); }
+  50% { transform: translate(-5%, -9%); }
 }
 
 @keyframes grain2 {
@@ -114,7 +114,7 @@ html::after {
 }
 
 html::before {
-  animation: grain1 4s steps(9) infinite;
+  animation: grain1 4s steps(14) infinite;
 }
 
 html::after {
