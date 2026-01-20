@@ -9,7 +9,6 @@ copyrightColor: "#ffffff"
 I have no substance beyond quotes that made the person I am:
 
 *So you have swept me back / I who could have walked with the live souls / above the earth, / I who could have slept among the live flowers / at last;*
-
 *so for your arrogance / and your ruthlessness / I am swept back / where dead lichens drip dead cinders upon moss of ash;*
 
 H.D Laurance
