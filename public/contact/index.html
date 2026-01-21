@@ -98,7 +98,37 @@ document.addEventListener('DOMContentLoaded', function() {
       video.classList.add('loaded');
     }
   }
+
+  
+
+
+  document.querySelectorAll('[data-eroded]').forEach(block => {
+    const link = block.querySelector('a');
+    if (!link) return;
+
+    const words = link.innerText.split(/(\s+)/);
+
+    const rebuilt = words.map(w => {
+      
+      if (w.trim() === "") return w;
+
+      
+      if (w.includes("(") || w.includes(")")) return w;
+
+      
+      if (Math.random() < 0.3) {
+        const offset = (Math.random() * 0.4 - 0.2).toFixed(2);
+        return `<span class="eroded-word" style="--strike-offset:${offset}em">${w}</span>`;
+      }
+
+      return w;
+    }).join("");
+
+    link.innerHTML = rebuilt;
+  });
+
 });
+
 
 window.addEventListener('load', function() {
   document.body.classList.add('page-loaded');
@@ -109,10 +139,10 @@ window.addEventListener('load', function() {
 
 
 window.addEventListener('pageshow', function(event) {
-  
   if (event.persisted) {
     isNavigating = false;
     document.body.classList.add('page-loaded');
+
     const video = document.getElementById('video-background');
     if (video) video.classList.add('loaded');
   }
@@ -142,10 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       isNavigating = true;
       
-      
       const video = document.getElementById('video-background');
       if (video) video.classList.remove('loaded');
-      
       
       document.body.classList.remove('page-loaded');
       

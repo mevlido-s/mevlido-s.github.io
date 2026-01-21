@@ -24,7 +24,7 @@ il canto delle cicale è un canto di pietra (2024)
 
 tutto ciò sotto il sole: un soffio (2023)
 
-{{< eroded "/posts/soundworks/oldworks" >}}
+{{< eroded "/posts/oldworks">}}
 archive of old and not anymore important projects (2018 - 2022)
 {{< /eroded >}}
 
