@@ -1,11 +1,8 @@
 ---
-title: "Contact"
+title:
 images: ["IMG_1122.jpg"]
 layout: "plain"
 ---
-
-## Get in Touch
-
-Email: your@email.com
+Email: simonespampinatoatik.me
 
 [CV (PDF)](../Simone_SpampinatoCV_2026.pdf)

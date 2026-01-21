@@ -24,6 +24,13 @@
     </item>
     <item>
       <title></title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;p&gt;Email: simonespampinatoatik.me&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../Simone_SpampinatoCV_2026.pdf&#34;&gt;CV (PDF)&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>http://localhost:1313/posts/oldworks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/oldworks/</guid>
@@ -56,13 +63,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/w/</guid>
       <description>&lt;p&gt;quando guardi e poi accade poi non ancora non c&amp;rsquo;è.&#xA;Sceglierai la caduta&lt;/p&gt;&#xA;&lt;p&gt;/&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Contact</title>
-      <link>http://localhost:1313/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/contact/</guid>
-      <description>&lt;h2 id=&#34;get-in-touch&#34;&gt;Get in Touch&lt;/h2&gt;&#xA;&lt;p&gt;Email: &lt;a href=&#34;mailto:your@email.com&#34;&gt;your@email.com&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;../Simone_SpampinatoCV_2026.pdf&#34;&gt;CV (PDF)&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>visuals</title>
