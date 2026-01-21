@@ -14,7 +14,7 @@ wind stop before the wall (2019)<br><br>
 {{< /extlink >}}
 
 {{< extlink "https://simonespampinato.bandcamp.com/album/viola-damore" >}}
-wind stop before the wall (2019)<br><br>
+viola d'amore (2019)<br><br>
 {{< /extlink >}}
 
 {{< extlink "https://simonespampinato.bandcamp.com/album/short-piece-s" >}}
