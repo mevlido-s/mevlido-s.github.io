@@ -47,8 +47,39 @@ document.addEventListener('DOMContentLoaded', function() {
       video.classList.add('loaded');
     }
   }
+
+  /* ============================
+     ARCHIVE EROSION
+     ============================ */
+
+  document.querySelectorAll('[data-eroded]').forEach(block => {
+    const link = block.querySelector('a');
+    if (!link) return;
+
+    const words = link.innerText.split(/(\s+)/);
+
+    const rebuilt = words.map(w => {
+      // keep spaces
+      if (w.trim() === "") return w;
+
+      // exclude dates / parentheses
+      if (w.includes("(") || w.includes(")")) return w;
+
+      // subtle probability
+      if (Math.random() < 0.3) {
+        const offset = (Math.random() * 0.4 - 0.2).toFixed(2);
+        return `<span class="eroded-word" style="--strike-offset:${offset}em">${w}</span>`;
+      }
+
+      return w;
+    }).join("");
+
+    link.innerHTML = rebuilt;
+  });
+
 });
 
+// Ensure fade-in even if DOMContentLoaded fires before this script
 window.addEventListener('load', function() {
   document.body.classList.add('page-loaded');
   
@@ -58,10 +89,10 @@ window.addEventListener('load', function() {
 
 // Handle browser back/forward buttons
 window.addEventListener('pageshow', function(event) {
-  // Reset state when page is shown from cache (back button)
   if (event.persisted) {
     isNavigating = false;
     document.body.classList.add('page-loaded');
+
     const video = document.getElementById('video-background');
     if (video) video.classList.add('loaded');
   }
@@ -91,11 +122,9 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       isNavigating = true;
       
-      // Fade out video
       const video = document.getElementById('video-background');
       if (video) video.classList.remove('loaded');
       
-      // Fade out body
       document.body.classList.remove('page-loaded');
       
       setTimeout(() => {

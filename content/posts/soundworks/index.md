@@ -8,7 +8,7 @@ copyrightColor: "#ffffff"
 
 [ancorati alla sabbia (2025)](ancorati/)
 
-[W (2025)](/posts/soundworks/W/)
+[W (2025)](/W/)
 
 [our hymns (2025)](/posts/soundworks/ourHymns)
 
@@ -23,6 +23,11 @@ copyrightColor: "#ffffff"
 il canto delle cicale è un canto di pietra (2024)
 
 tutto ciò sotto il sole: un soffio (2023)
+
+{{< eroded "/posts/soundworks/oldworks" >}}
+archive of old and not anymore important projects (2018 - 2022)
+{{< /eroded >}}
+
 
 
 

@@ -14,6 +14,8 @@
   </url><url>
     <loc>http://localhost:1313/upcoming/</loc>
   </url><url>
+    <loc>http://localhost:1313/w/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/contact/</loc>
