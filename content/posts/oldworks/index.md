@@ -10,7 +10,7 @@ mater (2021)<br><br>
 {{< /extlink >}}
 
 {{< extlink "https://simonespampinato.bandcamp.com/album/wind-stops-before-the-wall" >}}
-wind stop before the wall (2019)<br><br>
+wind stop before the wall (2020)<br><br>
 {{< /extlink >}}
 
 {{< extlink "https://simonespampinato.bandcamp.com/album/viola-damore" >}}
