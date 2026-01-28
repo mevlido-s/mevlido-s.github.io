@@ -1,9 +1,9 @@
 ---
 title: ""
-images: ["IMG_1122.jpg"]
+images: ["DSCN93602.jpg"]
 layout: "plain"
-mediaCopyright: "@ Ivan Liuzzo"
-copyrightColor: "#ffffff"
+mediaCopyright: "archive"
+copyrightColor: "#000000"
 ---
 
 I have no substance beyond quotes that made the person I am:

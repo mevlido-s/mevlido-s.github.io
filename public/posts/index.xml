@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/oldworks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/oldworks/</guid>
-      <description>&lt;p&gt;ssss&lt;/p&gt;</description>
+      <description>&lt;a href=&#34;https://on.soundcloud.com/d3hpJekXaVy3Chc1M8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;mater (2021)&lt;br&gt;&lt;br&gt;&#xA;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;a href=&#34;https://simonespampinato.bandcamp.com/album/wind-stops-before-the-wall&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;wind stop before the wall (2020)&lt;br&gt;&lt;br&gt;&#xA;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;a href=&#34;https://simonespampinato.bandcamp.com/album/viola-damore&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;viola d&#39;amore (2019)&lt;br&gt;&lt;br&gt;&#xA;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;a href=&#34;https://simonespampinato.bandcamp.com/album/short-piece-s&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;short pieces (2019)&lt;br&gt;&#xA;&#xA;&lt;/a&gt;</description>
     </item>
     <item>
       <title></title>
@@ -21,6 +21,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/other-project/</guid>
       <description>&lt;a href=&#34;https://lecumedesjours.bandcamp.com/album/the-ghost-of&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;l&#39;écume des jours&#xA;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;p&gt;sensibili alle foglie&lt;/p&gt;&#xA;&lt;a href=&#34;https://tellyourbirds.bandcamp.com/album/pause-in-nature-then-carry-on-with-hope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;tell your birds&#xA;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;p&gt;GGHELS&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/publications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/publications/</guid>
+      <description>&lt;p&gt;Gentle Fire Basel, Dito Publishing (2025)&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
@@ -34,7 +41,7 @@
       <link>http://localhost:1313/posts/visuals/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/visuals/</guid>
-      <description>&lt;p&gt;this part of the website is still underconstruction.&lt;/p&gt;</description>
+      <description>&lt;p&gt;this part of the website is still under construction.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -8,9 +8,13 @@
   </url><url>
     <loc>http://localhost:1313/ancorati/</loc>
   </url><url>
+    <loc>http://localhost:1313/contact/</loc>
+  </url><url>
     <loc>http://localhost:1313/posts/oldworks/</loc>
   </url><url>
     <loc>http://localhost:1313/posts/other-project/</loc>
+  </url><url>
+    <loc>http://localhost:1313/posts/publications/</loc>
   </url><url>
     <loc>http://localhost:1313/posts/soundworks/</loc>
   </url><url>
@@ -19,8 +23,6 @@
     <loc>http://localhost:1313/w/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
-  </url><url>
-    <loc>http://localhost:1313/contact/</loc>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
   </url><url>

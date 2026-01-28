@@ -5,14 +5,16 @@ body {
   transition: opacity 0.2s ease-out;
   font-family: 'Atkinson Hyperlegible', sans-serif !important;
   font-size: 18px;
-  line-height: 1.6;
+  line-height: 3;
+  /* filter: blur(0.5px) brightness(0.7); */
+
 }
 
 body.page-loaded {
   opacity: 1;
 }
 
-/* Keep site title visible during transitions */
+/* transitions */
 #site-title,
 #site-title a,
 .lead {
@@ -60,7 +62,7 @@ p {
   line-height: 1.6;
 }
 
-/* Video background styles with fade support */
+/* Video background  */
 #video-background {
   position: absolute;
   top: 0;
