@@ -22,4 +22,3 @@ Performed:
 
 {{< img "W_ForOrest.jpg" >}}
 
-![test](W_ForOrest.jpg)

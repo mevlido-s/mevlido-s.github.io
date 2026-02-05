@@ -24,6 +24,8 @@
   </url><url>
     <loc>http://localhost:1313/w/</loc>
   </url><url>
+    <loc>http://localhost:1313/posts/an_oath/</loc>
+  </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/posts/</loc>
