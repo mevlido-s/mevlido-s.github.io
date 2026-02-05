@@ -16,7 +16,7 @@ copyrightColor: "#ffffff"
 
 [minor angel n.1 (2024)](/posts/soundworks/minor_angel) 
 
-[del nostro scavo continuo (2024)](/posts/soundworks/delnostroscavocontinuo) 
+[del nostro scavo continuo (2024)](/scavo/) 
 
 [an oath: of desert and sea (2024)](an_oath) 
 

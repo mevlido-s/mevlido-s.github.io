@@ -20,3 +20,6 @@ Performed:
 29/11/2025 Korvat Auki, Vaapa Taiten Tilla, Helsinki (FI)
  
 
+{{< img "W_ForOrest.jpg" >}}
+
+![test](W_ForOrest.jpg)
