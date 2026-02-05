@@ -34,7 +34,7 @@
       <link>http://localhost:1313/posts/an_oath/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/an_oath/</guid>
-      <description>&lt;p&gt;“If beneath things there were to hide a bottomless void, never to be filled, what would life be other than despair? If this were the case—if no sacred bond were to unite humanity, if generations were to renew themselves one after another like the foliage of forests, if they were to be extinguished one by one like the birdsong fading in the woods; if they were to traverse the world as a ship crosses the ocean, or as the wind crosses the desert, as a blind and sterile action; if an eternal oblivion, perpetually ravenous, were to stalk its prey, and there were no force capable of tearing it away—how empty and desolate life would be&amp;quot;&lt;/p&gt;</description>
+      <description>&lt;p&gt;“&lt;em&gt;If beneath things there were to hide a bottomless void, never to be filled, what would life be other than despair? If this were the case—if no sacred bond were to unite humanity, if generations were to renew themselves one after another like the foliage of forests, if they were to be extinguished one by one like the birdsong fading in the woods; if they were to traverse the world as a ship crosses the ocean, or as the wind crosses the desert, as a blind and sterile action; if an eternal oblivion, perpetually ravenous, were to stalk its prey, and there were no force capable of tearing it away—how empty and desolate life would be&amp;quot;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
@@ -48,7 +48,7 @@
       <link>http://localhost:1313/posts/other-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/other-project/</guid>
-      <description>&lt;a href=&#34;https://lecumedesjours.bandcamp.com/album/the-ghost-of&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;l&#39;écume des jours&#xA;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;p&gt;sensibili alle foglie&lt;/p&gt;&#xA;&lt;a href=&#34;https://tellyourbirds.bandcamp.com/album/pause-in-nature-then-carry-on-with-hope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;tell your birds&#xA;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;p&gt;GGHELS&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://lecumedesjours.bandcamp.com/album/the-ghost-of&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;l&#39;écume des jours&#xA;&#xA;&lt;/a&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/sensibili/&#34;&gt;sensibili alle foglie&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://tellyourbirds.bandcamp.com/album/pause-in-nature-then-carry-on-with-hope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;tell your birds&#xA;&#xA;&lt;/a&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;TK ENSEMBLE&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
@@ -56,6 +56,20 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/publications/</guid>
       <description>&lt;p&gt;Gentle Fire Basel, Dito Publishing (2025)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/sensibili/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/sensibili/</guid>
+      <description>&lt;p&gt;sensibili alle foglie, is a ensemble specialised in intertwining between instruments, objects, and space. Their work seeks the presence of sound and its path through repetition towards absence, the path of becoming hemmed in between the imagined and the real. A lead into the otherness of listening.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;“When They denied motion, He, as everyone knows, came forward in protest, actually came forward, because He did not say a word, but simply walked back and forth a few times, with which gesture He believed he had sufficiently refuted Their position. ” From: Soren Kierkegaard.&lt;/em&gt;&#xA;“Repetition and Philosophical Crumbs”,&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/soundworks/ilcantodellecicale/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/soundworks/ilcantodellecicale/</guid>
+      <description></description>
     </item>
     <item>
       <title></title>
