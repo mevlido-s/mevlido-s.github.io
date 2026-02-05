@@ -9,14 +9,10 @@ copyrightColor: "#000000"
 
 ## 2026 
 
-## May 
--
+## March 
 
-### April
-- TBC Gentle Fire 
+- 19/03 Sensibili alle foglie, Kulttuuriasiainkeskus Eläintarhan Huvila, Helsinki ((FI))
 
-### March 
-- 17/03 Lecture and workshop at EMTA (EE) for Gentle Fire Project with Ivan Liuzzo - LAB Classes 
+- 17/03 Lecture and workshop at EMTA LAB Classes - Gentle Fire Basel with Ivan Liuzzo, Estonia (EE)
 
-- 03/03 Reflecting the Political - Phoenix Café 
-concert with Sensibili alle Foglie 
+- 03/03 Reflecting the Political - sensibili alle foglie - Phoenix Café, Helsinki (FI)
