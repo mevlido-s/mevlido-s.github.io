@@ -17,7 +17,7 @@ copyrightColor: "#000000"
 
 Denise Lombardi, for Del nostro scavo continuo 
 
-Del nostro scavo continuo takes the form of an installation-concert developed from an interdisciplinary reflection on the aquatic element, understood not as a mere natural referent but as a field of physical behaviors and forces. Water is approached through its transparency and its dynamic of flow, as a continuous process of transition between states of flood and drought, governed by a periodic movement of coming and going, of accumulation and depletion, which ultimately structures the temporal articulation of the work itself
+Del nostro scavo continuo takes the form of an installation-concert developed from an interdisciplinary reflection on the aquatic element, understood not as a mere natural referent but as a field of physical behaviors and forces. Water is approached through its transparency and its dynamic of flow, as a continuous process of transition between states of flood and drought, governed by a periodic movement of coming and going, of accumulation and depletion, which ultimately structures the temporal articulation of the work itself.
 
 
 
