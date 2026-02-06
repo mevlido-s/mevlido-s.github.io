@@ -57,3 +57,15 @@ A. Volodine
 *Quando il tempo non era ancora chiaro / se un fronte nascosto è tra i rami di un albero / in mezzo a quel piccolo lembo di luce / nascosto tra le foglie / abbiamo chiesto in ginocchio / il nome della momoria*
 (archive)
 
+
+
+
+
+
+
+
+
+
+-------------------------
+
+Website  powered by hugo and Hugo Split Gallery theme (inspired by Hugo Split Theme and Split Template by One Page Love)

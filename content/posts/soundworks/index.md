@@ -6,21 +6,21 @@ copyrightColor: "#ffffff"
 ---
 
 
-[ancorati alla sabbia (2025)](ancorati/)
+[ancorati alla sabbia](ancorati/) (2025)
 
-[W (2025)](/W/)
+[W](/W/) (2025)
 
-[our hymns (2025)](/posts/soundworks/ourHymns)
+[our hymns](/posts/soundworks/ourHymns) (2025)
 
-[Gentle Fire Basel (2021-2025)](/posts/soundworks/GentleFireBasel)
+[Gentle Fire Basel](/posts/soundworks/GentleFireBasel) (2021-2025)
 
-[minor angel n.1 (2024)](/posts/soundworks/minor_angel) 
+[minor angel n.1](/posts/soundworks/minor_angel) (2024)
 
-[del nostro scavo continuo (2024)](/scavo/) 
+[del nostro scavo continuo](/scavo/) (2024)
 
-[an oath: of desert and sea (2024)](an_oath) 
+[an oath: of desert and sea](an_oath) (2024)
 
-il canto delle cicale è un canto di pietra (2024)
+[il canto delle cicale è un canto di pietra](/posts/cicale/) (2024)
 
 tutto ciò sotto il sole: un soffio (2023)
 

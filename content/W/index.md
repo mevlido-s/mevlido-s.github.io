@@ -4,6 +4,7 @@ images: ["Untitled.jpg"]
 mediaCopyright: "archive: Francesca Fabrizi, Simone Spampinato"
 copyrightColor: "#ffffff"
 ---
+
 W - for solo violin and pre-recorded violin
 
 12 seconds starring at a window and then something appear. 
