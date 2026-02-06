@@ -305,3 +305,30 @@ body::-webkit-scrollbar {
   50%  { opacity: 0.4; }
   100% { opacity: 0.25; }
 }
+
+
+.image-credit-wrapper {
+  position: relative;
+  margin: 0;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.image-credit-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;       /* ← preserves proportions */
+  width: auto;        /* ← prevents stretching */
+}
+
+.image-credit {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 0.75rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4px 6px;
+  border-radius: 3px;
+  line-height: 1.2;
+}

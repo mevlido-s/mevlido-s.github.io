@@ -1,1 +1,6 @@
-<img src="{{ .Get 0 }}" style="max-width: 100%; height: auto;">
+<figure class="image-credit-wrapper">
+  <img src="{{ .Get 0 }}" alt="{{ .Get 1 }}">
+  {{ with .Get 1 }}
+    <figcaption class="image-credit">{{ . }}</figcaption>
+  {{ end }}
+</figure>

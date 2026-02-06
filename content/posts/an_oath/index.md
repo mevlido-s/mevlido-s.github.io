@@ -2,7 +2,7 @@
 title: ""
 layout: plain
 images: ["a.jpg"]
-mediaCopyright: "Kaspars Zborovskis @kasparfoto"
+mediaCopyright: "© Kaspars Zborovskis @kasparfoto"
 copyrightColor: "#ffffff"
 ---
 

@@ -2,7 +2,7 @@
 title: ""
 layout: plain
 images: ["CantoInst.jpg"]
-mediaCopyright: "archive"
+mediaCopyright: "© DFTM¹"
 copyrightColor: "#000000"
 ---
 
@@ -40,16 +40,16 @@ Correlated projects with same technique:
 
 {{< img "canto.jpeg" >}}
 
-{{< img "IlCantoDelleCicaleEUnCantoDiPietraSPAZIOMURKA-0526.jpg" >}}
+{{< img "IlCantoDelleCicaleEUnCantoDiPietraSPAZIOMURKA-0526.jpg" "© DFTM¹" >}}
 
-{{< img "IlCantoDelleCicaleEUnCantoDiPietra-0883.jpg">}}
+{{< img "IlCantoDelleCicaleEUnCantoDiPietra-0883.jpg" "© DFTM¹">}}
 
-{{< img "IlCantoDelleCicaleEUnCantoDiPietra-0931.jpg">}}
+{{< img "IlCantoDelleCicaleEUnCantoDiPietra-0931.jpg" "© DFTM¹">}}
 
-{{< img "IlCantoDelleCicaleEUnCantoDiPietra-0932.jpg">}}
+{{< img "IlCantoDelleCicaleEUnCantoDiPietra-0932.jpg" "© DFTM¹">}}
 
-
-Installed: 
+<br>
+<br>Installed: 
 
 05-07/04/2025, Spazio Murka, produced by DFTM¹, Florence (IT) 
 
