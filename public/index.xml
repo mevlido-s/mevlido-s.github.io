@@ -101,6 +101,13 @@
     </item>
     <item>
       <title></title>
+      <link>http://localhost:1313/posts/visuals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/visuals/</guid>
+      <description>&lt;p&gt;this part of the website is still under construction.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>http://localhost:1313/scavo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/scavo/</guid>
@@ -119,13 +126,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/w/</guid>
       <description>&lt;p&gt;W - for solo violin and pre-recorded violin&lt;/p&gt;&#xA;&lt;p&gt;12 seconds starring at a window and then something appear.&lt;/p&gt;&#xA;&lt;p&gt;12 seconds holding your breath and then ask you why.&lt;/p&gt;&#xA;&lt;p&gt;12 seconds keeping you alive between impenetrable self to impenetrable unself.&lt;/p&gt;&#xA;&lt;p&gt;For Orest Smohvz, W and always W.&lt;/p&gt;&#xA;&lt;p&gt;Performed:&lt;/p&gt;&#xA;&lt;p&gt;29/11/2025 Korvat Auki, Vaapa Taiten Tilla, Helsinki (FI)&lt;/p&gt;&#xA;&lt;figure class=&#34;image-credit-wrapper&#34;&gt;&#xA;  &lt;img src=&#34;W_ForOrest.jpg&#34; alt=&#34;&#34;&gt;&#xA;  &#xA;&lt;/figure&gt;</description>
-    </item>
-    <item>
-      <title>visuals</title>
-      <link>http://localhost:1313/posts/visuals/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/visuals/</guid>
-      <description>&lt;p&gt;this part of the website is still under construction.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

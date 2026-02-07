@@ -1,5 +1,5 @@
 ---
-title: "visuals"
+title: ""
 layout: plain
 backgroundVideo: "Clipforwebsite.mp4"
 ---
