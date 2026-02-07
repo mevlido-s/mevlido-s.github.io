@@ -6,27 +6,27 @@ mediaCopyright: "© Emanuele Caprioli"
 copyrightColor: "#000000"
 ---
 
-We speak
-of the windows
-and I see that you are distracted, you look for your own face in the shiny glass
-and your secrets, or the stories you tell, they stay trapped in this back and forth
-they don’t get
-to me.
-Water that runs, water that slaps,
-digging up absurd structures, inoperable.
-teems
-overflows
-crosses
-until it doesn’t pierce
-but it eats away
-with the perseverance
-of a hundred year old ant
-indifferent army
-that presses onward
-bit by bit.
+*We speak*
+*of the windows*
+*and I see that you are distracted, you look for your own face in the shiny glass*
+*and your secrets, or the stories you tell, they stay trapped in this back and forth*
+*they don’t get*
+*to me.*
+*Water that runs, water that slaps,*
+*digging up absurd structures, inoperable.*
+*teems*
+*overflows*
+*crosses*
+*until it doesn’t pierce*
+*but it eats away*
+*with the perseverance*
+*of a hundred year old ant*
+*indifferent army*
+*that presses onward*
+*bit by bit.*
 
 
-This artist’s book gathers some of its textual,
+This artist’s book gathers some textual,
 visual, and sonic traces.
 
 A project by
