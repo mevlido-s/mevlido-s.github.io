@@ -6,6 +6,8 @@ mediaCopyright: "Simone Di Gioia"
 copyrightColor: "#000000"
 
 ---
+A project by Caterina Dufì, Emanuele Caprioli, Simone Spampinato
+
 
 *Crossed by the subtle terror that is part of the miracle, we live*
 *the fear of failing to decode any sign, and that, because of this, the*

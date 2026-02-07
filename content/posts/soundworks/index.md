@@ -22,7 +22,7 @@ copyrightColor: "#ffffff"
 
 [il canto delle cicale è un canto di pietra](/posts/cicale/) (2024)
 
-tutto ciò sotto il sole: un soffio (2023)
+[tutto ciò sotto il sole: un soffio](/posts/tuttociò) (2023)
 
 {{< eroded "/posts/oldworks">}}
 archive of old and not anymore important projects (2018 - 2022)

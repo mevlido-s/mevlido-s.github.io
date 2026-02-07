@@ -25,6 +25,8 @@ copyrightColor: "#000000"
 
 *fra l’insetto e la pietra.*
 
+Guido Celli, Pietra Madre
+
 <br>
 
 {{< vimeo 881224971 >}}
@@ -49,7 +51,9 @@ Correlated projects with same technique:
 {{< img "IlCantoDelleCicaleEUnCantoDiPietra-0932.jpg" "© DFTM¹">}}
 
 <br>
-<br>Installed: 
+<br>
+
+Installed: 
 
 05-07/04/2025, Spazio Murka, produced by DFTM¹, Florence (IT) 
 

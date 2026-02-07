@@ -1,9 +1,11 @@
 ---
 title: ""
 layout: plain
-images: "Clipforwebsite.mp4"
+images: ["AmalgamaEdizioni_9.jpg"]
+mediaCopyright: "© Amalgama Edizioni"
+copyrightColor: "#000000"
 ---
 
-Gentle Fire Basel, Dito Publishing (2025)
+[Gentle Fire Basel, Dito Publishing](GFBook/) (2025) 
 
-
+[Del nostro Scavo continuo, Amalgama Edizioni - Archivio Tipografico di Torino](DNSCBook/) (2025)
