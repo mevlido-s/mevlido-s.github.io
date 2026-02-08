@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
-    
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />  
 
   
     
@@ -1171,41 +1171,16 @@ Tags
   
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  window.addEventListener('load', function() {
-    
+  document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
-      
-      const links = document.querySelectorAll('a.glightbox');
-      console.log('Found links:', links.length);
-      
-      
       const lightbox = GLightbox({
+        selector: '.glightbox',
         touchNavigation: true,
-        loop: true
+        loop: true,
+        autoplayVideos: false
       });
-      
-      
-      links.forEach(function(link, index) {
-        link.onclick = function(e) {
-          e.preventDefault();
-          e.stopPropagation();
-          e.stopImmediatePropagation();
-          
-          console.log('Link clicked!');
-          
-          
-          lightbox.setElements([{
-            href: this.href,
-            type: 'image'
-          }]);
-          lightbox.open();
-          
-          return false;
-        };
-      });
-      
-      console.log('Lightbox setup complete');
-    }, 1000);
+      console.log('GLightbox ready');
+    }, 500);
   });
 </script>
 </body>

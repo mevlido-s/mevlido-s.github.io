@@ -10,7 +10,7 @@ DefaultContentLanguage = "en"
 
 [params]
   robots = "index, follow"
-  favicon = ""
+  favicon = "favicon.ico"
   description = "Photo gallery inspired by Hugo Split Theme"
   images = ["DSCF0348.jpg"]
   # customCss = ['css/custom1.css', 'css/custom2.css']
