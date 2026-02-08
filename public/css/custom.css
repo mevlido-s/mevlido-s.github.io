@@ -375,3 +375,28 @@ body::-webkit-scrollbar {
   position: fixed !important;
   z-index: 9999999 !important;
 }
+
+/* Mobile fixes for GLightbox */
+@media (max-width: 768px) {
+  .gslide-image img {
+    max-width: 95vw !important;
+    max-height: 85vh !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+  
+  .gslide-media {
+    max-width: 95vw !important;
+    max-height: 85vh !important;
+  }
+  
+  .gslide-inner-content {
+    padding: 20px 10px !important;
+  }
+  
+  /* Make sure container doesn't overflow */
+  .gcontainer {
+    padding: 0 !important;
+  }
+}
