@@ -109,7 +109,24 @@
   
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-window.lightbox = GLightbox();
+  window.lightbox = GLightbox({
+    touchNavigation: true,
+    loop: true,
+    onOpen: function() {
+      // Remove aria-hidden from container when lightbox opens
+      const container = document.querySelector('.container-fluid');
+      if (container) {
+        container.removeAttribute('aria-hidden');
+      }
+    },
+    onClose: function() {
+      // Also remove it when closing
+      const container = document.querySelector('.container-fluid');
+      if (container) {
+        container.removeAttribute('aria-hidden');
+      }
+    }
+  });
 </script>
 </body>
 
