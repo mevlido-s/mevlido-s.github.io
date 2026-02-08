@@ -414,23 +414,41 @@ naked binding + slipcase</p>
   
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  window.lightbox = GLightbox({
-    touchNavigation: true,
-    loop: true,
-    onOpen: function() {
+  window.addEventListener('load', function() {
+    
+    setTimeout(function() {
       
-      const container = document.querySelector('.container-fluid');
-      if (container) {
-        container.removeAttribute('aria-hidden');
-      }
-    },
-    onClose: function() {
+      const links = document.querySelectorAll('a.glightbox');
+      console.log('Found links:', links.length);
       
-      const container = document.querySelector('.container-fluid');
-      if (container) {
-        container.removeAttribute('aria-hidden');
-      }
-    }
+      
+      const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true
+      });
+      
+      
+      links.forEach(function(link, index) {
+        link.onclick = function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          e.stopImmediatePropagation();
+          
+          console.log('Link clicked!');
+          
+          
+          lightbox.setElements([{
+            href: this.href,
+            type: 'image'
+          }]);
+          lightbox.open();
+          
+          return false;
+        };
+      });
+      
+      console.log('Lightbox setup complete');
+    }, 1000);
   });
 </script>
 </body>

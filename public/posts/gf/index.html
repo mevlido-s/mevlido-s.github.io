@@ -527,23 +527,16 @@ tion - or at least a point of transition - between the sound images, while servi
   
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  window.lightbox = GLightbox({
-    touchNavigation: true,
-    loop: true,
-    onOpen: function() {
-      
-      const container = document.querySelector('.container-fluid');
-      if (container) {
-        container.removeAttribute('aria-hidden');
-      }
-    },
-    onClose: function() {
-      
-      const container = document.querySelector('.container-fluid');
-      if (container) {
-        container.removeAttribute('aria-hidden');
-      }
-    }
+  document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      const lightbox = GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: false
+      });
+      console.log('GLightbox ready');
+    }, 500);
   });
 </script>
 </body>
