@@ -1,5 +1,7 @@
 <figure class="image-credit-wrapper">
-  <img src="{{ .Get 0 }}" alt="{{ .Get 1 }}">
+  <a href="{{ .Get 0 }}" class="glightbox" data-gallery="content-images">
+    <img src="{{ .Get 0 }}" alt="{{ .Get 1 }}">
+  </a>
   {{ with .Get 1 }}
     <figcaption class="image-credit">{{ . }}</figcaption>
   {{ end }}

@@ -12,7 +12,7 @@ copyrightColor: "#ffffff"
 
 [our hymns](/posts/soundworks/ourHymns) (2025)
 
-[Gentle Fire Basel](/posts/soundworks/GentleFireBasel) (2021-2025)
+[Gentle Fire Basel](GF) (2021-2025)
 
 [minor angel n.1](/posts/soundworks/minor_angel) (2024)
 

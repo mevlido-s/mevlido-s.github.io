@@ -10,6 +10,8 @@ copyrightColor: "#000000"
 
 Emiliano Turazzi on Gentle Fire Basel (2025)
 
+---
+
 
 Alvin Lucier rework by Ivan Liuzzo and Simone Spampinato
 
@@ -26,13 +28,17 @@ Munken Pure 80 gr.
 pp.100
 naked binding + slipcase
 
+---
+
 *The score is vague, open, just like every other needs to be interpreted (significantly) and can tolerate a certain margin of error/misunderstanding. It cannot tolerate everything though. It is difficult to define its boundaries, but one of the main risks is limiting it into musical ones. This for sure does not happen in Liuzzo-Spampinato’s version. Other points could be questioned, but not this one. What sound does “healing cancer” make? Is it the sound of therapies? Is it the sound of the dying cancerous cells? The sound of chemical reactions? The sound of surgeries? The sound of the things to come? How long does this sound last? Healing is a process…*
 
-Emiliano Turazzi 
+Emiliano Turazzi on Gentle Fire Basel (2025)
 
 *Sound becomes a means of counter-narration and repositioning of power, a device for amplifying ignored voices and annulling the perceptual hierarchies imposed by the centrality of the visual. The soundscape of Basel is thus transformed into a field of cultural, social and political negotiation, where memory and acoustic sensitivity become instruments of social re-signification.*
 
-Daniela Gentile 
+Daniela Gentile on Gentle Fire Basel (2025)
+
+---
 
 {{< img "GF20251104_0015.jpg" >}}
 {{< img "GF20251104_0001.jpg" >}}

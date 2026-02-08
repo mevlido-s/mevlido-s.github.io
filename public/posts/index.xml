@@ -2,87 +2,94 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PROJECTS on mevlido / simone spampinato</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>http://localhost:55213/posts/</link>
     <description>Recent content in PROJECTS on mevlido / simone spampinato</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&amp;copy;2021-2022 Me</copyright>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:55213/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/an_oath/</link>
+      <link>http://localhost:55213/posts/an_oath/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/an_oath/</guid>
+      <guid>http://localhost:55213/posts/an_oath/</guid>
       <description>&lt;p&gt;“&lt;em&gt;If beneath things there were to hide a bottomless void, never to be filled, what would life be other than despair? If this were the case—if no sacred bond were to unite humanity, if generations were to renew themselves one after another like the foliage of forests, if they were to be extinguished one by one like the birdsong fading in the woods; if they were to traverse the world as a ship crosses the ocean, or as the wind crosses the desert, as a blind and sterile action; if an eternal oblivion, perpetually ravenous, were to stalk its prey, and there were no force capable of tearing it away—how empty and desolate life would be&amp;quot;&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/cicale/</link>
+      <link>http://localhost:55213/posts/cicale/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/cicale/</guid>
-      <description>&lt;p&gt;&lt;em&gt;il canto delle cicale è un canto di pietra&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;non un canto di gola, neppure d’aria&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;come quello dei passeri, quello delle fronde&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;ma un canto di sole bruno e di pietra&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;un canto di tronco secco come la pietra&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;un canto d’arso e stoppie come la pietra.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Le cicale sono il punto d’incontro&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;l’anello mancante&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;fra l’insetto e la pietra.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Guido Celli, Pietra Madre&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&#xA;      &lt;div&#xA;          style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;        &lt;iframe&#xA;          src=&#34;https://player.vimeo.com/video/881224971?dnt=0&#34;&#xA;            style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allow=&#34;fullscreen&#34;&gt;&#xA;        &lt;/iframe&gt;&#xA;      &lt;/div&gt;&#xA;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+      <guid>http://localhost:55213/posts/cicale/</guid>
+      <description>&lt;p&gt;&lt;em&gt;il canto delle cicale è un canto di pietra&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;non un canto di gola, neppure d’aria&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;come quello dei passeri, quello delle fronde&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;ma un canto di sole bruno e di pietra&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;un canto di tronco secco come la pietra&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;un canto d’arso e stoppie come la pietra.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Le cicale sono il punto d’incontro&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;l’anello mancante&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;fra l’insetto e la pietra.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Guido Celli, Pietra Madre&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&#xA;      &lt;div&#xA;          style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;        &lt;iframe&#xA;          src=&#34;https://player.vimeo.com/video/881224971?dnt=0&#34;&#xA;            style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allow=&#34;fullscreen&#34;&gt;&#xA;        &lt;/iframe&gt;&#xA;      &lt;/div&gt;&#xA;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/dnscbook/</link>
+      <link>http://localhost:55213/posts/dnscbook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/dnscbook/</guid>
-      <description>&lt;p&gt;We speak&#xA;of the windows&#xA;and I see that you are distracted, you look for your own face in the shiny glass&#xA;and your secrets, or the stories you tell, they stay trapped in this back and forth&#xA;they don’t get&#xA;to me.&#xA;Water that runs, water that slaps,&#xA;digging up absurd structures, inoperable.&#xA;teems&#xA;overflows&#xA;crosses&#xA;until it doesn’t pierce&#xA;but it eats away&#xA;with the perseverance&#xA;of a hundred year old ant&#xA;indifferent army&#xA;that presses onward&#xA;bit by bit.&lt;/p&gt;</description>
+      <guid>http://localhost:55213/posts/dnscbook/</guid>
+      <description>&lt;p&gt;&lt;em&gt;We speak&lt;/em&gt;&#xA;&lt;em&gt;of the windows&lt;/em&gt;&#xA;&lt;em&gt;and I see that you are distracted, you look for your own face in the shiny glass&lt;/em&gt;&#xA;&lt;em&gt;and your secrets, or the stories you tell, they stay trapped in this back and forth&lt;/em&gt;&#xA;&lt;em&gt;they don’t get&lt;/em&gt;&#xA;&lt;em&gt;to me.&lt;/em&gt;&#xA;&lt;em&gt;Water that runs, water that slaps,&lt;/em&gt;&#xA;&lt;em&gt;digging up absurd structures, inoperable.&lt;/em&gt;&#xA;&lt;em&gt;teems&lt;/em&gt;&#xA;&lt;em&gt;overflows&lt;/em&gt;&#xA;&lt;em&gt;crosses&lt;/em&gt;&#xA;&lt;em&gt;until it doesn’t pierce&lt;/em&gt;&#xA;&lt;em&gt;but it eats away&lt;/em&gt;&#xA;&lt;em&gt;with the perseverance&lt;/em&gt;&#xA;&lt;em&gt;of a hundred year old ant&lt;/em&gt;&#xA;&lt;em&gt;indifferent army&lt;/em&gt;&#xA;&lt;em&gt;that presses onward&lt;/em&gt;&#xA;&lt;em&gt;bit by bit.&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/gfbook/</link>
+      <link>http://localhost:55213/posts/gf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/gfbook/</guid>
-      <description>&lt;p&gt;&lt;em&gt;What does Gentle Fire leave behind as a score, an idea or possible and concrete realizations? It is the right question for each human creation, not just musical ones: what does it leave behind?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Emiliano Turazzi on Gentle Fire Basel (2025)&lt;/p&gt;&#xA;&lt;p&gt;Alvin Lucier rework by Ivan Liuzzo and Simone Spampinato&lt;/p&gt;&#xA;&lt;p&gt;text contributions by Emiliano Turazzi  and Daniela Gentile photographs by Tzuchi Su&lt;/p&gt;&#xA;&lt;p&gt;edition curated by Klim Kutsevskyy and Martha Micali (DITO Studio)&lt;/p&gt;</description>
+      <guid>http://localhost:55213/posts/gf/</guid>
+      <description>&lt;p&gt;Gentle Fire Basel is a rework made with Ivan Liuzzo initiated in 2021, based on&#xA;Alvin Lucier’s composition Gentle Fire (1971).&#xA;The piece consists in transforming a sound&#xA;image, present in a list, into another sound image,&#xA;part of a second list.&lt;/p&gt;&#xA;&lt;p&gt;This process should be slow and clear.&#xA;Some sound ‘images’ written in the lists are sound&#xA;events from the environment, others are speculative and imaginative.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;[&amp;hellip;] For me those lists were ways of making beautiful scores. I thought of them as poetry. [&amp;hellip;]&lt;/em&gt;&#xA;&lt;em&gt;‘Some of the lists remind me of dreams&amp;hellip;’&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/oldworks/</link>
+      <link>http://localhost:55213/posts/gfbook/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/oldworks/</guid>
+      <guid>http://localhost:55213/posts/gfbook/</guid>
+      <description>&lt;p&gt;&lt;em&gt;What does Gentle Fire leave behind as a score, an idea or possible and concrete realizations? It is the right question for each human creation, not just musical ones: what does it leave behind?&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Emiliano Turazzi on Gentle Fire Basel (2025)&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;Alvin Lucier rework by Ivan Liuzzo and Simone Spampinato&lt;/p&gt;&#xA;&lt;p&gt;text contributions by Emiliano Turazzi  and Daniela Gentile photographs by Tzuchi Su&lt;/p&gt;&#xA;&lt;p&gt;edition curated by Klim Kutsevskyy and Martha Micali (DITO Studio)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:55213/posts/oldworks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:55213/posts/oldworks/</guid>
       <description>&lt;a href=&#34;https://on.soundcloud.com/d3hpJekXaVy3Chc1M8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;mater (2021)&lt;br&gt;&#xA;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;a href=&#34;https://simonespampinato.bandcamp.com/album/wind-stops-before-the-wall&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;wind stop before the wall (2020)&lt;br&gt;&#xA;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;a href=&#34;https://simonespampinato.bandcamp.com/album/viola-damore&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;viola d&#39;amore (2019)&lt;br&gt;&#xA;&#xA;&lt;/a&gt;&#xA;&#xA;&lt;a href=&#34;https://simonespampinato.bandcamp.com/album/short-piece-s&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;short pieces (2019)&lt;br&gt;&#xA;&#xA;&lt;/a&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/other-project/</link>
+      <link>http://localhost:55213/posts/other-project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/other-project/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://lecumedesjours.bandcamp.com/album/the-ghost-of&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;l&#39;écume des jours&#xA;&#xA;&lt;/a&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/sensibili/&#34;&gt;sensibili alle foglie&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://tellyourbirds.bandcamp.com/album/pause-in-nature-then-carry-on-with-hope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;tell your birds&#xA;&#xA;&lt;/a&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;TK ENSEMBLE&lt;/p&gt;</description>
+      <guid>http://localhost:55213/posts/other-project/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://lecumedesjours.bandcamp.com/album/the-ghost-of&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;l&#39;écume des jours&#xA;&#xA;&lt;/a&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:55213/posts/sensibili/&#34;&gt;sensibili alle foglie&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://tellyourbirds.bandcamp.com/album/pause-in-nature-then-carry-on-with-hope&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&#xA;  &#xA;tell your birds&#xA;&#xA;&lt;/a&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;TK ENSEMBLE&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/publications/</link>
+      <link>http://localhost:55213/posts/publications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/publications/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/gfbook/&#34;&gt;Gentle Fire Basel, Dito Publishing&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/dnscbook/&#34;&gt;Del nostro Scavo continuo, Amalgama Edizioni - Archivio Tipografico di Torino&lt;/a&gt; (2025)&lt;/p&gt;</description>
+      <guid>http://localhost:55213/posts/publications/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:55213/posts/gfbook/&#34;&gt;Gentle Fire Basel, Dito Publishing&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:55213/posts/dnscbook/&#34;&gt;Del nostro Scavo continuo, Amalgama Edizioni - Archivio Tipografico di Torino&lt;/a&gt; (2025)&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/sensibili/</link>
+      <link>http://localhost:55213/posts/sensibili/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/sensibili/</guid>
+      <guid>http://localhost:55213/posts/sensibili/</guid>
       <description>&lt;p&gt;sensibili alle foglie, is a ensemble specialised in intertwining between instruments, objects, and space. Their work seeks the presence of sound and its path through repetition towards absence, the path of becoming hemmed in between the imagined and the real. A lead into the otherness of listening.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;“When They denied motion, He, as everyone knows, came forward in protest, actually came forward, because He did not say a word, but simply walked back and forth a few times, with which gesture He believed he had sufficiently refuted Their position. ” From: Soren Kierkegaard.&lt;/em&gt;&#xA;“Repetition and Philosophical Crumbs”,&lt;/p&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/soundworks/</link>
+      <link>http://localhost:55213/posts/soundworks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/soundworks/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/ancorati/&#34;&gt;ancorati alla sabbia&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/w/&#34;&gt;W&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/ourHymns&#34;&gt;our hymns&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/GentleFireBasel&#34;&gt;Gentle Fire Basel&lt;/a&gt; (2021-2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/minor_angel&#34;&gt;minor angel n.1&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/scavo/&#34;&gt;del nostro scavo continuo&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/an_oath/&#34;&gt;an oath: of desert and sea&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/cicale/&#34;&gt;il canto delle cicale è un canto di pietra&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/tuttoci%C3%B2/&#34;&gt;tutto ciò sotto il sole: un soffio&lt;/a&gt; (2023)&lt;/p&gt;&#xA;&lt;span class=&#34;archive-eroded&#34; data-eroded&gt;&#xA;  &lt;a href=&#34;http://localhost:1313/posts/oldworks&#34;&gt;&#xA;    archive of old and not anymore important projects (2018 - 2022)&#xA;  &lt;/a&gt;&#xA;&lt;/span&gt;</description>
+      <guid>http://localhost:55213/posts/soundworks/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:55213/ancorati/&#34;&gt;ancorati alla sabbia&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:55213/w/&#34;&gt;W&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:55213/posts/soundworks/ourHymns&#34;&gt;our hymns&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:55213/posts/gf/&#34;&gt;Gentle Fire Basel&lt;/a&gt; (2021-2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:55213/posts/soundworks/minor_angel&#34;&gt;minor angel n.1&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:55213/scavo/&#34;&gt;del nostro scavo continuo&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:55213/posts/an_oath/&#34;&gt;an oath: of desert and sea&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:55213/posts/cicale/&#34;&gt;il canto delle cicale è un canto di pietra&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:55213/posts/tuttoci%C3%B2/&#34;&gt;tutto ciò sotto il sole: un soffio&lt;/a&gt; (2023)&lt;/p&gt;&#xA;&lt;span class=&#34;archive-eroded&#34; data-eroded&gt;&#xA;  &lt;a href=&#34;http://localhost:55213/posts/oldworks&#34;&gt;&#xA;    archive of old and not anymore important projects (2018 - 2022)&#xA;  &lt;/a&gt;&#xA;&lt;/span&gt;</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/tuttoci%C3%B2/</link>
+      <link>http://localhost:55213/posts/tuttoci%C3%B2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/tuttoci%C3%B2/</guid>
+      <guid>http://localhost:55213/posts/tuttoci%C3%B2/</guid>
       <description>&lt;p&gt;&lt;em&gt;Un infinito vuoto&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Un infinito niente&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Tutto è vuoto niente&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;Qohélet, a cura di Guido Ceronetti&lt;/p&gt;&#xA;&lt;p&gt;composed together with Gabriele Teti&lt;/p&gt;&#xA;&lt;p&gt;&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;&#xA;  &lt;iframe &#xA;    style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34; &#xA;    src=&#34;https://www.youtube.com/embed/TFxYt4noHh8&#34; &#xA;    frameborder=&#34;0&#34; &#xA;    allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&#34; &#xA;    allowfullscreen&gt;&#xA;  &lt;/iframe&gt;&#xA;&lt;/div&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;Performed:&#xA;10/12/2023, Saint Michelangelo&amp;rsquo;s Church, Arpino (IT) - Gabriele Teti, Piergiorgio Fabrizi, Francesca Fabrizi, Giorgia Parmeni, Tobia Bianchini, Eugenio Cecchini, Elia Dell&amp;rsquo;Orco, Daniele Grande, Gemma Guarrieri, Leonardo Ranucci, Matteo Spacagna, Daniel Ezquerra&lt;/p&gt;</description>
     </item>
     <item>
-      <title>visuals</title>
-      <link>http://localhost:1313/posts/visuals/</link>
+      <title></title>
+      <link>http://localhost:55213/posts/visuals/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/visuals/</guid>
+      <guid>http://localhost:55213/posts/visuals/</guid>
       <description>&lt;p&gt;this part of the website is still under construction.&lt;/p&gt;</description>
     </item>
   </channel>

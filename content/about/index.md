@@ -68,4 +68,4 @@ A. Volodine
 
 -------------------------
 
-Website  powered by hugo and Hugo Split Gallery theme (inspired by Hugo Split Theme and Split Template by One Page Love)
+Website powered by Hugo and Hugo Split Gallery theme 

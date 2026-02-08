@@ -27,16 +27,20 @@ copyrightColor: "#000000"
 
 Guido Celli, Pietra Madre
 
+---
+
 <br>
 
 {{< vimeo 881224971 >}}
 <br>
 
+---
+
 Correlated projects with same technique: 
 
 {{< soundcloud url="" >}}
 
-
+---
 
 <br>
 
@@ -49,6 +53,8 @@ Correlated projects with same technique:
 {{< img "IlCantoDelleCicaleEUnCantoDiPietra-0931.jpg" "© DFTM¹">}}
 
 {{< img "IlCantoDelleCicaleEUnCantoDiPietra-0932.jpg" "© DFTM¹">}}
+
+---
 
 <br>
 <br>
