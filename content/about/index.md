@@ -18,7 +18,7 @@ H.D Laurance
 
 Anassimene
 
-*Its goal the river knows,*  / *Dewdrops find a way,* / *Sunlight cheers the rose*  / *In her day:*  / *Shall I, lone sorrow past,* / *Find thee at the last?* / *Sorrow past,*  / *Thee at last?*
+*Its goal the river knows, / *Dewdrops find a way, / Sunlight cheers the rose  / In her day:  / Shall I, lone sorrow past, / Find thee at the last? / *Sorrow past, / Thee at last?*
 
 C. Rossetti 
 
@@ -50,8 +50,8 @@ Gil Sansón
 A. Volodine
 
 
-*“Il volto, afferma Lévinas, è "ciò che mi ordina di servire l 'altro", "ciò che mi vieta di uccidere”*
-(Bourriaud, 2020, p. 24)
+*“Il volto è ciò che mi ordina di servire l''altro, ciò che mi vieta di uccidere*
+A. Levinas
 
 
 *Quando il tempo non era ancora chiaro / se un fronte nascosto è tra i rami di un albero / in mezzo a quel piccolo lembo di luce / nascosto tra le foglie / abbiamo chiesto in ginocchio / il nome della momoria*
