@@ -1,7 +1,7 @@
 ---
 title: ""
 layout: plain
-images: ["METRONIMIE - DAY 1-02635.jpg"]
+images: ["s.jpg"]
 mediaCopyright: "© Alberto Costa @"
 copyrightColor: "#000000"
 ---
