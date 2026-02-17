@@ -1,9 +1,9 @@
 ---
 title: ""
 layout: plain
-images: ["Amalgama Edizioni_1.jpg"]
-mediaCopyright: "© Emanuele Caprioli"
-copyrightColor: "#000000"
+images: ["METRONIMIE - DAY 1-02598.jpg"]
+mediaCopyright: "©Alberto Costa @albertocosta___ "
+copyrightColor: "#ffffff"
 ---
 
 *We speak*

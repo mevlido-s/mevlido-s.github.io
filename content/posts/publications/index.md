@@ -3,7 +3,7 @@ title: ""
 layout: plain
 images: ["s.jpg"]
 mediaCopyright: "© Alberto Costa @"
-copyrightColor: "#000000"
+copyrightColor: "#ffffff"
 ---
 
 [Gentle Fire Basel, Dito Publishing](GFBook/) (2025) 
