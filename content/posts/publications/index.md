@@ -1,8 +1,8 @@
 ---
 title: ""
 layout: plain
-images: ["AmalgamaEdizioni_9.jpg"]
-mediaCopyright: "© Amalgama Edizioni"
+images: ["METRONIMIE - DAY 1-02635.jpg"]
+mediaCopyright: "© Alberto Costa @"
 copyrightColor: "#000000"
 ---
 
