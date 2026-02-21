@@ -400,3 +400,12 @@ body::-webkit-scrollbar {
     padding: 0 !important;
   }
 }
+
+.audio-player {
+  margin: 2rem 0;
+}
+
+.audio-player audio {
+  width: 100%;
+  border-radius: 12px;
+}

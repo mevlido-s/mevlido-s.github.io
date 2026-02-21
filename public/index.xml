@@ -66,6 +66,13 @@
     </item>
     <item>
       <title></title>
+      <link>http://localhost:1313/posts/minor_angel2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/minor_angel2/</guid>
+      <description>&lt;p&gt;Il lavoro si concentra sull&amp;rsquo;epifenomeno del momento musicale. Quello che diventa musica è il passare del tempo, l’attesa, la permanenza del suono nello spazio più che il gesto che lo produce.&#xA;La chitarra viene privata del suo attacco, del transiente mentre l’amplificazione distante crea una frattura percettiva. Come se la chitarra e performer non stiano comunicando tra loro.&#xA;Il suono arriva come un residuo, come qualcosa che è già successo o che sta succedendo altrove.&#xA;&lt;div class=&#34;audio-player&#34;&gt;&#xA;  &lt;audio controls&gt;&#xA;    &lt;source src=&#34;http://localhost:1313/minorangel2.mp3&#34; type=&#34;audio/mpeg&#34;&gt;&#xA;  &lt;/audio&gt;&#xA;&lt;/div&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
       <link>http://localhost:1313/posts/oldworks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/oldworks/</guid>
@@ -97,7 +104,7 @@
       <link>http://localhost:1313/posts/soundworks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/soundworks/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/ancorati/&#34;&gt;ancorati alla sabbia&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/w/&#34;&gt;W&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/ourHymns&#34;&gt;our hymns&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/gf/&#34;&gt;Gentle Fire Basel&lt;/a&gt; (2021-2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/minor_angel/&#34;&gt;minor angel n.1&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/scavo/&#34;&gt;del nostro scavo continuo&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/an_oath/&#34;&gt;an oath: of desert and sea&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/cicale/&#34;&gt;il canto delle cicale è un canto di pietra&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/tuttoci%C3%B2/&#34;&gt;tutto ciò sotto il sole: un soffio&lt;/a&gt; (2023)&lt;/p&gt;&#xA;&lt;span class=&#34;archive-eroded&#34; data-eroded&gt;&#xA;  &lt;a href=&#34;http://localhost:1313/posts/oldworks&#34;&gt;&#xA;    archive of old and not anymore important projects (2018 - 2022)&#xA;  &lt;/a&gt;&#xA;&lt;/span&gt;</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://localhost:1313/ancorati/&#34;&gt;ancorati alla sabbia&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/w/&#34;&gt;W&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/ourHymns&#34;&gt;our hymns&lt;/a&gt; (2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/gf/&#34;&gt;Gentle Fire Basel&lt;/a&gt; (2021-2025)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/soundworks/minor_angel&#34;&gt;minor angel n.1&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/scavo/&#34;&gt;del nostro scavo continuo&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/an_oath/&#34;&gt;an oath: of desert and sea&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/cicale/&#34;&gt;il canto delle cicale è un canto di pietra&lt;/a&gt; (2024)&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;http://localhost:1313/posts/tuttoci%C3%B2/&#34;&gt;tutto ciò sotto il sole: un soffio&lt;/a&gt; (2023)&lt;/p&gt;&#xA;&lt;span class=&#34;archive-eroded&#34; data-eroded&gt;&#xA;  &lt;a href=&#34;http://localhost:1313/posts/oldworks&#34;&gt;&#xA;    archive of old and not anymore important projects (2018 - 2022)&#xA;  &lt;/a&gt;&#xA;&lt;/span&gt;</description>
     </item>
     <item>
       <title></title>
@@ -133,13 +140,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/w/</guid>
       <description>&lt;p&gt;W - for solo violin and pre-recorded violin&lt;/p&gt;&#xA;&lt;p&gt;12 seconds starring at a window and then something appear.&lt;/p&gt;&#xA;&lt;p&gt;12 seconds holding your breath and then ask you why.&lt;/p&gt;&#xA;&lt;p&gt;12 seconds keeping you alive between impenetrable self to impenetrable unself.&lt;/p&gt;&#xA;&lt;p&gt;For Orest Smohvz, W and always W.&lt;/p&gt;&#xA;&lt;p&gt;Performed:&lt;/p&gt;&#xA;&lt;p&gt;29/11/2025 Korvat Auki, Vaapa Taiten Tilla, Helsinki (FI)&lt;/p&gt;&#xA;&lt;figure class=&#34;image-credit-wrapper&#34;&gt;&#xA;  &lt;a href=&#34;W_ForOrest.jpg&#34; class=&#34;glightbox&#34; data-gallery=&#34;content-images&#34;&gt;&#xA;    &lt;img src=&#34;W_ForOrest.jpg&#34; alt=&#34;&#34;&gt;&#xA;  &lt;/a&gt;&#xA;  &#xA;&lt;/figure&gt;</description>
-    </item>
-    <item>
-      <title>minor angel n.1</title>
-      <link>http://localhost:1313/posts/soundworks/minor_angel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/soundworks/minor_angel/</guid>
-      <description>&lt;p&gt;quando guardi e poi accade poi non ancora non c&amp;rsquo;è.&#xA;Sceglierai la caduta&lt;/p&gt;&#xA;&lt;p&gt;/&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
