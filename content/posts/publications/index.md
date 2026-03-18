@@ -2,7 +2,7 @@
 title: ""
 layout: plain
 images: ["s.jpg"]
-mediaCopyright: "© Alberto Costa @"
+mediaCopyright: "© Alberto Costa @albertocosta___"
 copyrightColor: "#ffffff"
 ---
 
