@@ -13,3 +13,5 @@ Il suono arriva come un residuo, come qualcosa che è già successo o che sta su
 ---
 {{< audio src="/minorangel2.mp3" >}}
 ---
+{{< audio src="/minor angel_exVII-DuoLimiteMargine-verso_3.mp3" >}}
+---
