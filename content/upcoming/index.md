@@ -11,7 +11,9 @@ copyrightColor: "#000000"
 
 ## June
 
-- 26/06 valittu.kaduta, for Solo Violin, with Orest Smovzh, with the support of Musiikin edistämissäätiö (MES), Toinen Kerros, Helsinki (FI)
+- 26/06 valittu.kaduta, for Solo Violin, with Orest Smovzh, supported by *Musiikin edistämissäätiö* (MES), Toinen Kerros, Helsinki (FI)
+
+___
 
 ## May
 
