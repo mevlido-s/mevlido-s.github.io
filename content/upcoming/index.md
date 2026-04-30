@@ -9,6 +9,11 @@ copyrightColor: "#000000"
 
 ## 2026 
 
+
+## July
+
+___
+
 ## June
 
 - 26/06 valittu.kaduta, for Solo Violin, with Orest Smovzh, supported by *Musiikin edistämissäätiö* (MES), Toinen Kerros, Helsinki (FI)
@@ -18,6 +23,8 @@ ___
 ## May
 
 - 17/05 second minor angel, Toinen Kerros, Ããnen Lumo, Finland (FI)
+
+- 14/05 4 SOUNDS, Two2 by Cage, with Orest Smovzh, Toinen Kerros, Finland (FI) 
 
 - 05/05 Sulo Kolemainen-Mevlido, Kasarmintori, NEMO architetcts events, Helsinki (FI)
 
