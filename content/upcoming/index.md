@@ -9,12 +9,21 @@ copyrightColor: "#000000"
 
 ## 2026 
 
-## April
-- TBC, Solo Mevlido, TBC, Catania (IT)
+## June
+
+- 26/06 valittu.kaduta, for Solo Violin, with Orest Smovzh, with the support of Musiikin edistämissäätiö (MES), Toinen Kerros, Helsinki (FI)
+
+## May
+
+- 17/05 second minor angel, Toinen Kerros, Ããnen Lumo, Finland (FI)
+
+- 05/05 Sulo Kolemainen-Mevlido, Kasarmintori, NEMO architetcts events, Helsinki (FI)
+
+___
 
 ## March 
 
-- 19/03 Sensibili alle foglie, Kulttuuriasiainkeskus Eläintarhan Huvila, Helsinki ((FI))
+- 19/03 Sensibili alle foglie, Kulttuuriasiainkeskus Eläintarhan Huvila, Mymmala 2, Helsinki (FI)
 
 - 17/03 Lecture and workshop at EMTA LAB Classes - Gentle Fire Basel with Ivan Liuzzo, Estonia (EE)
 
