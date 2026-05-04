@@ -12,6 +12,8 @@ reb alcé, from the book of questions of edmond jabés
 
 [sound works](posts/soundworks/)
 
+[discography](posts/discography/)
+
 [visual works](posts/visuals/)
 
 [publications](posts/publications/)
