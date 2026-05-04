@@ -7,6 +7,8 @@ copyrightColor: "#ffffff"
 
 ### discography 
 
+Liniaments I/II / October Ballads, Friederick Rasten - Mark Reid Bulatovich - Simone Spampinato, Isthmus Recordings (2026) 
+
 Gentle Fire Helsinki, Dito Publishing (2025)
 
 
