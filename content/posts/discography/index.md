@@ -1,6 +1,6 @@
 ---
 layout: plain
-images: ["/images/0014_15A000074780014.jpg"]
+images: ["0002_3000074720002.jpg"]
 mediaCopyright: "archive, simone spampinato"
 copyrightColor: "#ffffff"
 ---
