@@ -5,11 +5,9 @@ mediaCopyright: "archive, simone spampinato"
 copyrightColor: "#ffffff"
 ---
 
-
-
+### discography 
 
 Gentle Fire Helsinki, Dito Publishing (2025)
-
 
 
 ### mastering, mixing and other form of collaboration 
@@ -20,7 +18,7 @@ You Were There, Francesca Fabrizi, xxx (2026)
 
 Artificial Dreams, Vittorio Auteri, Defense Mechanism (2025)
 
-Irei/Tikur, Ivan Liuzzo, ZOK Records (2025)
+Irei/Tikur, Ivan Liuzzo, ZOK Records (2025) 
 
 
 
