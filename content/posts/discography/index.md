@@ -7,16 +7,16 @@ copyrightColor: "#ffffff"
 
 ### discography 
 
-Liniaments I/II / October Ballads, Friederick Rasten - Mark Reid Bulatovich - Simone Spampinato, Isthmus Recordings (2026) 
+Liniaments I/II | October Ballads, Friederick Rasten - Mark Reid Bulatovich - Simone Spampinato, Isthmus Recordings ( to be release 2026) 
 
 Gentle Fire Helsinki, Dito Publishing (2025)
 
 
 ### mastering, mixing and other form of collaboration 
 
-Treasure Hunt, Livia Schweizer, xxx (2026)
+Treasure Hunt, Livia Schweizer, xxx (to be released 2026)
 
-You Were There, Francesca Fabrizi, xxx (2026)
+You Were There, Francesca Fabrizi, xxx (to be released 2026)
 
 Artificial Dreams, Vittorio Auteri, Defense Mechanism (2025)
 
