@@ -7,20 +7,32 @@ copyrightColor: "#ffffff"
 
 ### discography 
 
-Liniaments I/II | October Ballads, Friederick Rasten - Mark Reid Bulatovich - Simone Spampinato, Isthmus Recordings ( to be release 2026) 
+{{< extlink "https://isthmusrec.bandcamp.com/album/ballad-broadcast-lineaments" >}}
+Liniaments I/II | October Ballads, Fredrik Rasten - Mark Reid Bulatović - Simone Spampinato, Isthmus Recordings
+<br>
+{{< /extlink >}}
 
-Gentle Fire Helsinki, Dito Publishing (2025)
+{{< extlink "https://liuzzospampinato.bandcamp.com/merch/gentle-fire-basel-artist-book" >}}
+Gentle Fire Basel, with Ivan Liuzzo, Dito publishing
+<br>
+{{< /extlink >}}
 
 
-### mastering, mixing and other form of collaboration 
+### mastering, mixing  
 
 Treasure Hunt, Livia Schweizer, xxx (to be released 2026)
 
 You Were There, Francesca Fabrizi, xxx (to be released 2026)
 
+{{< extlink "https://liuzzospampinato.bandcamp.com/merch/gentle-fire-basel-artist-book" >}}
 Artificial Dreams, Vittorio Auteri, Defense Mechanism (2025)
+<br>
+{{< /extlink >}}
 
+{{< extlink "https://zokrecords.bandcamp.com/album/irei-tikur" >}}
 Irei/Tikur, Ivan Liuzzo, ZOK Records (2025) 
+<br>
+{{< /extlink >}}
 
 
 
