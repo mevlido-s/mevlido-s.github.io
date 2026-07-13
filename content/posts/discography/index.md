@@ -7,7 +7,7 @@ copyrightColor: "#ffffff"
 
 ### discography 
 
-{{< extlink "https://takusugimoto.bandcamp.com/album/10-11-12-for-clapping >}}
+{{< extlink "https://takusugimoto.bandcamp.com/album/10-11-12-for-clapping" >}}
 10, 11, 12 (for clapping) | Taku Sugimoto 
 <br>
 {{< /extlink >}}
@@ -23,13 +23,16 @@ Gentle Fire Basel, with Ivan Liuzzo, Dito publishing
 {{< /extlink >}}
 
 
-
-
-### mastering, mixing  
+### mastering, mixing, sound direction 
 
 Treasure Hunt, Livia Schweizer, xxx (to be released 2026)
 
 You Were There, Francesca Fabrizi, xxx (to be released 2026)
+
+{{< extlink "https://marcodemartino.bandcamp.com/track/una-luce-di-posti-dove-sono-stato" >}}
+una luce di posti dove sono stato, Marco De Martin (2025) 
+<br>
+{{< /extlink >}}
 
 {{< extlink "https://liuzzospampinato.bandcamp.com/merch/gentle-fire-basel-artist-book" >}}
 Artificial Dreams, Vittorio Auteri, Defense Mechanism (2025)
