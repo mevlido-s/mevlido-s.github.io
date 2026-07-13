@@ -5,7 +5,7 @@ body {
   transition: opacity 0.2s ease-out;
   font-family: 'Atkinson Hyperlegible', sans-serif !important;
   font-size: 18px;
-  line-height: 3;
+  line-height: 1.6;
   /* filter: blur(0.5px) brightness(0.7); */
 }
 
@@ -54,12 +54,6 @@ h3 { font-size: 1.75em; }
 h4 { font-size: 1.5em; }
 h5 { font-size: 1.25em; }
 h6 { font-size: 1em; }
-
-/* Make paragraph text bigger */
-p {
-  font-size: 18px;
-  line-height: 1.6;
-}
 
 /* Video background  */
 #video-background {

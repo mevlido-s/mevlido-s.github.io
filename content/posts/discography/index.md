@@ -7,6 +7,11 @@ copyrightColor: "#ffffff"
 
 ### discography 
 
+{{< extlink "https://takusugimoto.bandcamp.com/album/10-11-12-for-clapping >}}
+10, 11, 12 (for clapping) | Taku Sugimoto 
+<br>
+{{< /extlink >}}
+
 {{< extlink "https://isthmusrec.bandcamp.com/album/ballad-broadcast-lineaments" >}}
 Liniaments I/II | October Ballads, Fredrik Rasten - Mark Reid Bulatović - Simone Spampinato, Isthmus Recordings
 <br>
@@ -16,6 +21,8 @@ Liniaments I/II | October Ballads, Fredrik Rasten - Mark Reid Bulatović - Simon
 Gentle Fire Basel, with Ivan Liuzzo, Dito publishing
 <br>
 {{< /extlink >}}
+
+
 
 
 ### mastering, mixing  
