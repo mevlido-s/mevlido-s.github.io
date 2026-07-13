@@ -17,6 +17,8 @@ ___
 ## June
 
 - 26/06 valittu.kaduta, for Solo Violin, with Orest Smovzh, supported by *Musiikin edistämissäätiö* (MES)Toinen Kerros, Helsinki (FI)
+- 18/06 mp concert #1: 60°10’13.0”N 25°00’44.0”E, 10, 11, 12 - Taku Sugimoto, Alexandrins - Tom Johsnon, Instrument and Voice - Peter Ablinger, untitled - Michal Pisaro Liu, 60°10’13.0”N 25°00’44.0”E
+
 
 ___
 
