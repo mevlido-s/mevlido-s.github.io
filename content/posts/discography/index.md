@@ -7,7 +7,7 @@ copyrightColor: "#ffffff"
 
 ### discography 
 
-{{< extlink "https://takusugimoto.bandcamp.com/album/10-11-12-for-clapping" >}}
+{{< extlink "https://takusugimoto.bandcamp.com/album/10-11-12-for-clapping">}}
 10, 11, 12 (for clapping) | Taku Sugimoto 
 <br>
 {{< /extlink >}}
