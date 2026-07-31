@@ -483,6 +483,7 @@
       drawReadout(i);
       drawKnob(i);
    });
+
     // sync non sync toggle
     const syncBtn = document.getElementById("sync");
     function refreshUi() {
@@ -507,6 +508,8 @@
 
     const startStopBtn = document.getElementById("startstop");
     startStopBtn.onclick = async () => {
+      startStopBtn.onclick = async () => {
+      if (navigator.audioSession) navigator.audioSession.type = "playback";
       if (tracks[0].clock.state === "started") { // stop
         // FIX #4: a BPM change that never reached its tick shouldn't be lost or
         // fire stale on the next run — apply it now, while stopped, then wipe
