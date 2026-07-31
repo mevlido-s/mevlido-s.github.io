@@ -133,20 +133,6 @@
   }
 
  /* ── knob ── */
-  .knob-wrap { display: flex; flex-direction: column; align-items: center; gap: 7px; }
-  .knob-label {
-    font-size: 10px; letter-spacing: .16em;
-    text-transform: uppercase; color: var(--line);
-  }
-  .knob {
-    position: relative;
-    width: 60px; height: 54px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 54'%3E%3Cpath d='M17 3.5h26L57 27 43 50.5H17L3 27Z' fill='%23000' stroke='%23e8e8e8' stroke-width='5' stroke-linejoin='round'/%3E%3Ccircle cx='30' cy='27' r='17' fill='none' stroke='%23e8e8e8' stroke-width='1.2'/%3E%3C/svg%3E") center / 60px 54px no-repeat;
-    cursor: ns-resize; touch-action: none;
-  }
-  .knob:active { transform: translateY(1px); }
-
- /* ── knob ── */
   .knob-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
   .knob-label {
     font-size: 10px; letter-spacing: .16em;
@@ -155,10 +141,25 @@
   .knob {
     position: relative;
     width: 60px; height: 54px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 54'%3E%3Cpath d='M17 3.5h26L57 27 43 50.5H17L3 27Z' fill='%23000' stroke='%23e8e8e8' stroke-width='3' stroke-linejoin='round'/%3E%3Ccircle cx='30' cy='27' r='17' fill='none' stroke='%23e8e8e8' stroke-width='1.2'/%3E%3C/svg%3E") center / 60px 54px no-repeat;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 54'%3E%3Cpath d='M17 3.5h26L57 27 43 50.5H17L3 27Z' fill='%23000' stroke='%23e8e8e8' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E") center / 60px 54px no-repeat;
     cursor: ns-resize; touch-action: none;
   }
   .knob:active { transform: translateY(1px); }
+
+  /* only the dial turns; the hex bezel stays put */
+  .dial {
+    position: absolute; left: 50%; top: 50%;
+    width: 34px; height: 34px; margin: -17px 0 0 -17px;
+    border: 1px solid var(--line); border-radius: 50%;
+    transition: transform 80ms ease-out;
+  }
+  .dial::after {
+    content: "";
+    position: absolute; left: 50%; top: 3px;
+    width: 2px; height: 9px; margin-left: -1px;
+    border-radius: 1px;
+    background: var(--line);
+  }
 </style>
 </head>
 <body>
@@ -337,6 +338,8 @@
 
     // the BPM write itself, shared by the typed input and the knob drag.
     // Assumes v is already valid — each caller decides what invalid means.
+// the BPM write itself, shared by the typed input and the knob drag.
+    // Assumes v is already valid — each caller decides what invalid means.
     function applyBpm(i, v) {
       const t = tracks[i];
       if (i === 0) {
@@ -351,6 +354,29 @@
       }
       t.input.value = v;
       drawReadout(i);
+      drawKnob(i);
+    }
+
+    // when synced the knob steps through DIVISIONS instead of setting BPM
+    function applyDiv(i, idx) {
+      const t = tracks[i];
+      idx = Math.min(DIVISIONS.length - 1, Math.max(0, idx));
+      if (DIVISIONS[idx] === t.subdiv) return; // don't re-snap on every pixel of the drag
+      t.subdiv = DIVISIONS[idx];
+      t.sel.value = t.subdiv;
+      drawReadout(i);
+      drawKnob(i);
+      if (sync) snapToGrid(i, nextBoundary());
+    }
+
+    // 3deg per BPM, 40deg per division: it's an endless encoder, so the absolute
+    // angle means nothing — it's there to show the thing moved
+    function drawKnob(i) {
+      const t = tracks[i];
+      const deg = (i > 0 && sync)
+        ? DIVISIONS.indexOf(t.subdiv) * 40
+        : ((i === 0 && pendingBpm !== null) ? pendingBpm : t.bpm) * 3;
+      t.dial.style.transform = `rotate(${deg}deg)`;
     }
 
     // ui stuff to change later
@@ -422,35 +448,40 @@
         t.divUi.className = "ovl";
         const sel = document.createElement("select");
         DIVISIONS.forEach(d => sel.add(new Option(d, d, d === "4n", d === "4n")));
-        sel.onchange = () => {
-          t.subdiv = sel.value;
-          drawReadout(i);
-          if (sync) snapToGrid(i, nextBoundary());
-        };
+        t.sel = sel; // the knob needs to write back into it
+        sel.onchange = () => applyDiv(i, DIVISIONS.indexOf(sel.value));
         t.divUi.appendChild(sel);
         readout.appendChild(t.divUi);
       }
       strip.appendChild(readout);
 
       // knob: drag up/down for +/- 1 BPM per pixel
+// knob: drag up/down — BPM, or the division when synced
       t.knob = document.createElement("div");
       t.knob.className = "knob-wrap";
-      t.knob.innerHTML = `<span class="knob-label">Tempo</span><div class="knob"></div>`;
+      t.knob.innerHTML = `<span class="knob-label">Tempo</span><div class="knob"><i class="dial"></i></div>`;
+      t.knobLabel = t.knob.querySelector(".knob-label");
+      t.dial = t.knob.querySelector(".dial");
       const knob = t.knob.querySelector(".knob");
       knob.onpointerdown = (e) => {
         knob.setPointerCapture(e.pointerId);
         const y0 = e.clientY;
-        const b0 = (i === 0 && pendingBpm !== null) ? pendingBpm : t.bpm;
+        // decided once at pointerdown, so toggling sync mid-drag can't switch modes
+        const stepDiv = i > 0 && sync;
+        const start = stepDiv
+          ? DIVISIONS.indexOf(t.subdiv)
+          : ((i === 0 && pendingBpm !== null) ? pendingBpm : t.bpm);
         knob.onpointermove = (ev) => {
-          const v = Math.round(b0 + (y0 - ev.clientY));
-          applyBpm(i, Math.min(BPM_MAX, Math.max(BPM_MIN, v))); // drag clamps, typing reverts
+          const d = y0 - ev.clientY;
+          if (stepDiv) applyDiv(i, start + Math.round(d / 14)); // 14px per division
+          else applyBpm(i, Math.min(BPM_MAX, Math.max(BPM_MIN, Math.round(start + d))));
         };
       };
       knob.onpointerup = knob.onpointercancel = () => { knob.onpointermove = null; };
       strip.appendChild(t.knob);
 
       drawReadout(i);
-    });
+      drawKnob(i);
 
     // sync non sync toggle
     const syncBtn = document.getElementById("sync");
@@ -459,9 +490,9 @@
       for (let i = 1; i < 4; i++) {
         tracks[i].bpmUi.style.display = sync ? "none" : "";
         tracks[i].divUi.style.display = sync ? "" : "none";
-        tracks[i].knob.style.visibility = sync ? "hidden" : ""; // hidden, not removed: keeps the row aligned
+        tracks[i].knobLabel.textContent = sync ? "Div" : "Tempo";
       }
-      for (let i = 0; i < 4; i++) drawReadout(i);
+      for (let i = 0; i < 4; i++) { drawReadout(i); drawKnob(i); }
     }
     refreshUi();
 
