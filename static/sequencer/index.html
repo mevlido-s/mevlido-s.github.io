@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tone.js 4-Track Sync Test</title>
+<style>
+  :root {
+    --led: 233, 212, 92;
+    --line: #e8e8e8;
+  }
+
+  body {
+    margin: 0;
+    padding: 34px 16px 56px;
+    background: #0b0b0b;
+    color: #7d7d7d;
+    text-align: center;
+    font: 400 12px/1.5 ui-sans-serif, system-ui, sans-serif;
+    letter-spacing: .06em;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h3 {
+    margin: 32px 0 10px;
+    font-size: 10px; font-weight: 400;
+    letter-spacing: .3em; text-transform: uppercase;
+    color: #6e6e6e;
+  }
+
+  #startstop, #sync, #reset {
+    -webkit-appearance: none; appearance: none;
+    margin: 0 5px; padding: 9px 20px;
+    border: 1px solid var(--line); border-radius: 0;
+    background: transparent; color: var(--line);
+    font: inherit; letter-spacing: .12em; text-transform: uppercase;
+    cursor: pointer;
+    transition: background 120ms linear, color 120ms linear;
+  }
+  #startstop:hover, #sync:hover, #reset:hover { background: var(--line); color: #0b0b0b; }
+  #startstop:disabled { opacity: .4; cursor: default; }
+
+  /* one horizontal strip per track: pads, display, knob */
+  .track { display: flex; align-items: center; justify-content: center; gap: 16px; }
+  .steps { display: flex; }
+
+  /* touch-action none: a finger dragging over steps paints instead of scrolling */
+  .step {
+    position: relative;
+    -webkit-appearance: none; appearance: none;
+    width: 52px; height: 74px; margin: 0 5px; padding: 0;
+    border: 0; border-radius: 0;
+    background: #0b0b0b url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 74'%3E%3Cg fill='none' stroke='%23e8e8e8'%3E%3Cpath d='M.5.5h51v73H.5z'/%3E%3Cpath d='M.5 24.5h51'/%3E%3Cpath d='M6.5 30.5h39v37h-39z'/%3E%3Cpath d='M.5 24.5 6.5 30.5M51.5 24.5 45.5 30.5M.5 73.5 6.5 67.5M51.5 73.5 45.5 67.5'/%3E%3C/g%3E%3C/svg%3E") center / 52px 74px no-repeat;
+    touch-action: none; cursor: pointer;
+  }
+  .step:active { transform: translateY(1px); }
+
+  .step::after {
+    content: "";
+    position: absolute; left: 50%; top: 16.2%;
+    width: 17px; height: 17px; margin: -8.5px 0 0 -8.5px;
+    border-radius: 50%;
+    background: #3b3721;
+    transition: background 200ms ease-out, box-shadow 200ms ease-out;
+  }
+  .step.on::after { background: rgb(var(--led)); }
+  .step.play::after {
+    background: #fffbe2;
+    box-shadow: 0 0 8px 2px rgba(var(--led), .9),
+                0 0 22px 8px rgba(var(--led), .35);
+    transition: none;
+  }
+/* ── segment display ── */
+  .readout { position: relative; }
+  .seg {
+    display: flex; gap: 10px;
+    padding: 11px 14px;
+    border: 1px solid #f5f5f5;
+    border-radius: 6px;
+  }
+  .digit {
+    --t: 2px;    /* spessore segmento */
+    --l: 20px;   /* lunghezza segmento */
+    --g: 3px;    /* gap tra segmenti adiacenti */
+    position: relative;
+    width: calc(var(--l) + var(--t));
+    height: calc(2 * var(--l) + var(--t));
+  }
+
+  /* i segmenti spenti non hanno ombra: una box-shadow sfocata viene comunque
+     rasterizzata anche a opacity .03, e qui sono 128 elementi */
+  .digit i {
+    position: absolute;
+    background: rgb(var(--led));
+    border-radius: 999px;
+    opacity: .03;
+    transition: opacity 20ms linear;
+  }
+  .digit i.lit {
+    opacity: 1;
+    box-shadow: 0 0 6px rgba(var(--led), .55);
+  }
+
+  .digit .sa, .digit .sg, .digit .sd {
+    left: calc(var(--t) / 2 + var(--g));
+    width: calc(var(--l) - 2 * var(--g));
+    height: var(--t);
+  }
+  .digit .sf, .digit .sb, .digit .se, .digit .sc {
+    width: var(--t);
+    height: calc(var(--l) - 2 * var(--g));
+  }
+
+  .digit .sa { top: 0; }
+  .digit .sg { top: var(--l); }
+  .digit .sd { top: calc(2 * var(--l)); }
+  .digit .sf { left: 0; top: calc(var(--t) / 2 + var(--g)); }
+  .digit .sb { right: 0; top: calc(var(--t) / 2 + var(--g)); }
+  .digit .se { left: 0; top: calc(var(--l) + var(--t) / 2 + var(--g)); }
+  .digit .sc { right: 0; top: calc(var(--l) + var(--t) / 2 + var(--g)); }
+
+  .digit .dp {
+    right: calc(-1 * var(--t)); bottom: 0;
+    width: var(--t); height: var(--t);
+  }
+  /* invisible input / select stretched over the display */
+  .ovl {
+    position: absolute; inset: 0; margin: 0;
+    opacity: 0; cursor: pointer;
+  }
+  .ovl input, .ovl select {
+    width: 100%; height: 100%;
+    margin: 0; padding: 0; border: 0;
+    font: inherit;
+  }
+
+ /* ── knob ── */
+  .knob-wrap { display: flex; flex-direction: column; align-items: center; gap: 7px; }
+  .knob-label {
+    font-size: 10px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--line);
+  }
+  .knob {
+    position: relative;
+    width: 60px; height: 54px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 54'%3E%3Cpath d='M17 3.5h26L57 27 43 50.5H17L3 27Z' fill='%23000' stroke='%23e8e8e8' stroke-width='5' stroke-linejoin='round'/%3E%3Ccircle cx='30' cy='27' r='17' fill='none' stroke='%23e8e8e8' stroke-width='1.2'/%3E%3C/svg%3E") center / 60px 54px no-repeat;
+    cursor: ns-resize; touch-action: none;
+  }
+  .knob:active { transform: translateY(1px); }
+
+ /* ── knob ── */
+  .knob-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .knob-label {
+    font-size: 10px; letter-spacing: .16em;
+    text-transform: uppercase; color: var(--line);
+  }
+  .knob {
+    position: relative;
+    width: 60px; height: 54px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 54'%3E%3Cpath d='M17 3.5h26L57 27 43 50.5H17L3 27Z' fill='%23000' stroke='%23e8e8e8' stroke-width='3' stroke-linejoin='round'/%3E%3Ccircle cx='30' cy='27' r='17' fill='none' stroke='%23e8e8e8' stroke-width='1.2'/%3E%3C/svg%3E") center / 60px 54px no-repeat;
+    cursor: ns-resize; touch-action: none;
+  }
+  .knob:active { transform: translateY(1px); }
+</style>
+</head>
+<body>
+  
+  <button id="startstop">Start</button>
+  <button id="sync">Sync: OFF</button>
+  <button id="reset">Reset</button>
+  <div id="tracks"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+  <script>
+    const STEPS = 4;
+    const DIVISIONS = ["2n", "4n", "8n", "16n", "32n", "4t", "8t", "16t"];
+    const BPM_MIN = 1, BPM_MAX = 800;
+
+    // master limiter: keeps 4 samples summing on top of each other from clipping
+    const limiter = new Tone.Limiter(-3).toDestination();
+
+    // FIX #3: track load failures per-player so Start can report them.
+    let loadError = null;
+    // round robin: one bank of players per track, cycled on each hit.
+    // Counts match the files actually in samples/ (Kick has 3, rest have 4).
+    const SAMPLES = { Kick: 3, Hihat: 4, Snare: 4, Tom: 4 };
+    const PANS = { Kick: 0, Hihat: -0.2, Snare: 0, Tom: 0.3 }; // -1 = hard L, 1 = hard R
+    const players = Object.entries(SAMPLES).map(([n, count]) => {
+      const pan = new Tone.Panner(PANS[n]).connect(limiter);
+      const bank = Array.from({ length: count }, (_, k) => new Tone.Player({
+        url: `samples/${n}${k + 1}.wav`,
+        onerror: () => { loadError = loadError || `couldn't load samples/${n}${k + 1}.wav`; },
+      }).connect(pan));
+      bank.rr = 0; // next player to fire
+      return bank;
+    });
+
+    let sync = false;
+    let masterNextTick = 0; // valid only while running; always read via nextBoundary()
+    let pendingBpm = null;  // master BPM change waiting for the next master tick
+
+    // all per-track state in one place
+    const tracks = [0, 1, 2, 3].map(() => ({
+      bpm: 120,
+      subdiv: "4n",
+      pattern: Array(STEPS).fill(false),
+      step: 0,
+      clock: null,
+      resetAt: null, // zero the step at this time (was implicit before; FIX #4 clears it)
+      snapAt: null,  // stop/start already queued at this time (FIX #4 clears it)
+    }));
+
+    // FIX #2: masterNextTick is 0 before the first tick fires (and stale after a
+    // stop), so never schedule against it raw. This clamps to "no earlier than
+    // now", and callers that align several tracks compute it ONCE and pass it
+    // down so every track lands on the same boundary.
+    function nextBoundary() {
+      return Math.max(masterNextTick, Tone.now());
+    }
+
+    function freq(i) {
+      if (i > 0 && sync)
+        return (tracks[0].bpm / 60) * Tone.Time("4n").toSeconds() / Tone.Time(tracks[i].subdiv).toSeconds();
+      return tracks[i].bpm / 60;
+    }
+
+    function playStep(i, time) {
+      const t = tracks[i];
+      if (t.resetAt != null && time >= t.resetAt - 1e-4) { t.step = 0; t.resetAt = null; }
+      const s = t.step;
+      if (t.pattern[s]) {
+        const bank = players[i];
+        // choke: samples are 2s long, way past one step. A single Player used
+        // to cut its own tail on retrigger; with a bank the others must be
+        // stopped explicitly or tails ring over silent steps.
+        bank.forEach(p => { if (p.state === "started") p.stop(time); });
+        bank[bank.rr].start(time);
+        bank.rr = (bank.rr + 1) % bank.length;
+      }
+      t.step = (s + 1) % STEPS;
+
+      Tone.Draw.schedule(() => {
+        t.cells.forEach((c, k) => c.classList.toggle("play", k === s));
+        const ms = Math.min(250 / freq(i), 120);
+        setTimeout(() => t.cells[s].classList.remove("play"), ms);
+      }, time);
+    }
+
+    function retune(i, time) {
+      tracks[i].clock.frequency.setValueAtTime(freq(i), time);
+    }
+
+    // FIX #2: takes the boundary as a parameter instead of reading
+    // masterNextTick directly, so a caller aligning tracks 1-3 uses one shared
+    // value (and never a time in the past).
+    function snapToGrid(i, at) {
+      const c = tracks[i].clock;
+      if (tracks[0].clock.state !== "started") { c.frequency.value = freq(i); return; }
+      c.frequency.setValueAtTime(freq(i), at); // overwriting at the same time is fine
+      if (tracks[i].snapAt === at) return;
+      tracks[i].snapAt = at;
+      if (c.state === "started") c.stop(at); // stop AT the boundary, not now
+      c.start(at);
+    }
+
+    // FIX #4: one place that wipes every piece of transient scheduling state.
+    // Called on both stop and start so nothing queued in a previous run leaks
+    // into the next one.
+    function clearTransientState() {
+      pendingBpm = null;
+      tracks.forEach(t => { t.resetAt = null; t.snapAt = null; });
+    }
+
+    // clockkkk
+    tracks[0].clock = new Tone.Clock((time) => {
+      if (pendingBpm !== null) {
+        tracks[0].bpm = pendingBpm;
+        pendingBpm = null;
+        // setValueAtTime(_, time) lands the change exactly on this tick
+        tracks[0].clock.frequency.setValueAtTime(freq(0), time);
+        if (sync) for (let i = 1; i < 4; i++) retune(i, time);
+      }
+      playStep(0, time);
+      masterNextTick = time + 60 / tracks[0].bpm;
+    }, freq(0));
+
+    for (let i = 1; i < 4; i++)
+      tracks[i].clock = new Tone.Clock((time) => playStep(i, time), freq(i));
+
+   // ── seven-segment readout ────────────────────────────────
+    // which of the 7 segments light for each character we can show
+    const GLYPHS = {
+      "0":"abcdef", "1":"bc",     "2":"abdeg",  "3":"abcdg",   "4":"bcfg",
+      "5":"acdfg",  "6":"acdefg", "7":"abc",    "8":"abcdefg", "9":"abcdfg",
+      "n":"ceg",    "t":"defg",   " ":""
+    };
+
+    function buildSeg(parent) {
+      return [0, 1, 2, 3].map(() => {
+        const d = document.createElement("div");
+        d.className = "digit";
+        const segs = [..."abcdefg"].map(s => {
+          const e = document.createElement("i");
+          e.className = "s" + s;
+          d.appendChild(e);
+          return e;
+        });
+        segs.dot = document.createElement("i");
+        segs.dot.className = "dp";
+        d.appendChild(segs.dot);
+        parent.appendChild(d);
+        return segs;
+      });
+    }
+
+    // a "." attaches to the digit before it instead of taking a cell of its own,
+    // so "120.5" fits in four digits. Short strings are right-aligned.
+    function setSeg(digits, str) {
+      const glyphs = [];
+      for (const ch of String(str).toLowerCase()) {
+        if (ch === "." && glyphs.length) glyphs[glyphs.length - 1].dot = true;
+        else glyphs.push({ ch, dot: false });
+      }
+      while (glyphs.length < 4) glyphs.unshift({ ch: " ", dot: false });
+      glyphs.slice(-4).forEach((g, k) => {
+        const lit = GLYPHS[g.ch] || "";
+        digits[k].forEach((el, s) => el.classList.toggle("lit", lit.includes("abcdefg"[s])));
+        digits[k].dot.classList.toggle("lit", g.dot);
+      });
+    }
+
+    function drawReadout(i) {
+      const t = tracks[i];
+      if (i > 0 && sync) { setSeg(t.seg, t.subdiv); return; } // "16n", "8t", ...
+      // master shows a queued BPM change before its tick lands
+      const v = (i === 0 && pendingBpm !== null) ? pendingBpm : t.bpm;
+      setSeg(t.seg, Number.isInteger(v) ? String(v) : v.toFixed(1));
+    }
+
+    // the BPM write itself, shared by the typed input and the knob drag.
+    // Assumes v is already valid — each caller decides what invalid means.
+    function applyBpm(i, v) {
+      const t = tracks[i];
+      if (i === 0) {
+        if (t.clock.state === "started") pendingBpm = v; // applied on next master tick
+        else {
+          t.bpm = v;
+          for (let k = 0; k < 4; k++) tracks[k].clock.frequency.value = freq(k);
+        }
+      } else {
+        t.bpm = v;
+        if (!sync) t.clock.frequency.value = freq(i); // free-running: retune, keep phase
+      }
+      t.input.value = v;
+      drawReadout(i);
+    }
+
+    // ui stuff to change later
+    // drag-paint: the first cell pressed decides the value (its own toggle),
+    // every cell entered while the button is held gets that same value
+    let paint = null; // null = not dragging
+    window.addEventListener("pointerup", () => paint = null);
+    window.addEventListener("pointercancel", () => paint = null);
+
+    const tracksDiv = document.getElementById("tracks");
+    tracks.forEach((t, i) => {
+      const h = document.createElement("h3");
+      h.textContent = `Track ${i + 1}`;
+      tracksDiv.appendChild(h);
+
+      const strip = document.createElement("div");
+      strip.className = "track";
+      tracksDiv.appendChild(strip);
+
+      const row = document.createElement("div");
+      row.className = "steps";
+      t.cells = t.pattern.map((_, s) => {
+        const b = document.createElement("button");
+        b.className = "step";
+        const set = (v) => { t.pattern[s] = v; b.classList.toggle("on", v); };
+        b.onpointerdown = (e) => {
+          // touch implicitly captures the pointer on the first cell, which would
+          // swallow pointerenter on the others — release it so the drag paints
+          b.releasePointerCapture(e.pointerId);
+          e.preventDefault();
+          paint = !t.pattern[s];
+          set(paint);
+        };
+        b.onpointerenter = () => { if (paint !== null) set(paint); };
+        row.appendChild(b);
+        return b;
+      });
+      strip.appendChild(row);
+
+      const readout = document.createElement("div");
+      readout.className = "readout";
+      const seg = document.createElement("div");
+      seg.className = "seg";
+      readout.appendChild(seg);
+      t.seg = buildSeg(seg);
+
+      const bpmUi = document.createElement("label");
+      bpmUi.className = "ovl";
+      bpmUi.innerHTML = `<input type="number" value="120" min="${BPM_MIN}" max="${BPM_MAX}">`;
+      t.input = bpmUi.querySelector("input");
+      // the field is invisible, so mirror keystrokes onto the segments as they land
+      t.input.oninput = () => setSeg(t.seg, t.input.value.slice(0, 5) || " ");
+      t.input.onchange = (e) => {
+        const v = parseFloat(e.target.value);
+        // FIX #1: min/max attributes don't validate typed input, so do it here.
+        // Bad value (NaN, empty, out of range) -> revert the field, change nothing.
+        if (!Number.isFinite(v) || v < BPM_MIN || v > BPM_MAX) {
+          e.target.value = (i === 0 && pendingBpm !== null) ? pendingBpm : t.bpm;
+          drawReadout(i);
+          return;
+        }
+        applyBpm(i, v);
+      };
+      readout.appendChild(bpmUi);
+
+      if (i > 0) {
+        t.bpmUi = bpmUi;
+        t.divUi = document.createElement("label");
+        t.divUi.className = "ovl";
+        const sel = document.createElement("select");
+        DIVISIONS.forEach(d => sel.add(new Option(d, d, d === "4n", d === "4n")));
+        sel.onchange = () => {
+          t.subdiv = sel.value;
+          drawReadout(i);
+          if (sync) snapToGrid(i, nextBoundary());
+        };
+        t.divUi.appendChild(sel);
+        readout.appendChild(t.divUi);
+      }
+      strip.appendChild(readout);
+
+      // knob: drag up/down for +/- 1 BPM per pixel
+      t.knob = document.createElement("div");
+      t.knob.className = "knob-wrap";
+      t.knob.innerHTML = `<span class="knob-label">Tempo</span><div class="knob"></div>`;
+      const knob = t.knob.querySelector(".knob");
+      knob.onpointerdown = (e) => {
+        knob.setPointerCapture(e.pointerId);
+        const y0 = e.clientY;
+        const b0 = (i === 0 && pendingBpm !== null) ? pendingBpm : t.bpm;
+        knob.onpointermove = (ev) => {
+          const v = Math.round(b0 + (y0 - ev.clientY));
+          applyBpm(i, Math.min(BPM_MAX, Math.max(BPM_MIN, v))); // drag clamps, typing reverts
+        };
+      };
+      knob.onpointerup = knob.onpointercancel = () => { knob.onpointermove = null; };
+      strip.appendChild(t.knob);
+
+      drawReadout(i);
+    });
+
+    // sync non sync toggle
+    const syncBtn = document.getElementById("sync");
+    function refreshUi() {
+      syncBtn.textContent = sync ? "Sync: ON" : "Sync: OFF";
+      for (let i = 1; i < 4; i++) {
+        tracks[i].bpmUi.style.display = sync ? "none" : "";
+        tracks[i].divUi.style.display = sync ? "" : "none";
+        tracks[i].knob.style.visibility = sync ? "hidden" : ""; // hidden, not removed: keeps the row aligned
+      }
+      for (let i = 0; i < 4; i++) drawReadout(i);
+    }
+    refreshUi();
+
+    syncBtn.onclick = () => {
+      sync = !sync;
+      // FIX #2: compute the boundary once so all three slaves realign on the
+      // exact same instant, instead of each calling Tone.now() separately.
+      const at = nextBoundary();
+      for (let i = 1; i < 4; i++) snapToGrid(i, at);
+      refreshUi();
+    };
+
+    const startStopBtn = document.getElementById("startstop");
+    startStopBtn.onclick = async () => {
+      if (tracks[0].clock.state === "started") { // stop
+        // FIX #4: a BPM change that never reached its tick shouldn't be lost or
+        // fire stale on the next run — apply it now, while stopped, then wipe
+        // all queued resetAt/snapAt times (they point into a dead timeline).
+        if (pendingBpm !== null) {
+          tracks[0].bpm = pendingBpm;
+          for (let k = 0; k < 4; k++) tracks[k].clock.frequency.value = freq(k);
+        }
+        clearTransientState();
+        tracks.forEach(t => {
+          if (t.clock.state === "started") t.clock.stop();
+          t.cells.forEach(c => c.classList.remove("play"));
+        });
+        startStopBtn.textContent = "Start";
+        return;
+      }
+
+      // FIX #3: loading can fail (404, decode error) or just be slow — show a
+      // state, catch the rejection, and tell the user instead of dying silently.
+      startStopBtn.disabled = true;
+      startStopBtn.textContent = "Loading\u2026";
+      try {
+        await Tone.loaded(); // only starting waits for samples; controls work during load
+        if (loadError) throw new Error(loadError);
+        await Tone.start();
+      } catch (err) {
+        startStopBtn.textContent = `Load failed (${err.message || "unknown"}) \u2014 retry`;
+        startStopBtn.disabled = false;
+        return;
+      }
+      startStopBtn.disabled = false;
+
+      clearTransientState(); // FIX #4: belt-and-suspenders, in case stop was skipped
+      players.forEach(b => b.rr = 0); // round robin from sample 1 each run
+      const now = Tone.now() + 0.1; // margin so all clocks align on the same start
+      masterNextTick = now; // FIX #2: valid from the moment we start, not after tick #1
+      tracks.forEach(t => {
+        t.step = 0;
+        if (t.clock.state !== "started") t.clock.start(now);
+      });
+      startStopBtn.textContent = "Stop";
+    };
+
+    document.getElementById("reset").onclick = () => {
+      const running = tracks[0].clock.state === "started";
+      if (running && sync) { // two different reset: if synch than it's in the next master tick (so that all tracks are aligned
+        const when = nextBoundary();
+        tracks.forEach(t => {
+          t.resetAt = when; // zero the step at the boundary
+          if (t.snapAt === when) return; // stop/start already queued at this beat (reset or sync toggle)
+          t.snapAt = when;
+          t.clock.stop(when); // stop AT the boundary, nothing silenced early
+          t.clock.start(when);
+        });
+      } else { // , if not sync than it's immediate (so that the master is reset and the others are free to run on their own)
+        tracks.forEach(t => { if (t.clock.state === "started") t.clock.stop(); });
+        clearTransientState(); // FIX #4: old queued times are meaningless after a hard restart
+        tracks.forEach(t => t.step = 0);
+        if (running) {
+          const now = Tone.now() + 0.1;
+          masterNextTick = now; // FIX #2: same as start — keep the boundary valid
+          tracks.forEach(t => t.clock.start(now));
+        }
+      }
+    };
+
+  </script>
+</body>
+</html>
