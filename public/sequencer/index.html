@@ -152,15 +152,44 @@
     right: calc(-1 * var(--t)); bottom: 0;
     width: var(--t); height: var(--t);
   }
-  /* invisible input / select stretched over the display */
+  /* invisible input / button stretched over the display */
   .ovl {
-    position: absolute; inset: 0; margin: 0;
+    position: absolute; inset: 0; margin: 0; padding: 0;
+    -webkit-appearance: none; appearance: none;
+    background: transparent; border: 0;
     opacity: 0; cursor: pointer;
   }
-  .ovl input, .ovl select {
+  .ovl input {
     width: 100%; height: 100%;
     margin: 0; padding: 0; border: 0;
     font: inherit;
+  }
+
+  /* division picker: rows are note lengths, columns are the tuplet families,
+     same black / outline / LED language as the step pads */
+  .divmenu {
+    position: absolute; z-index: 5;
+    left: 50%; top: calc(100% + 10px);
+    transform: translateX(-50%);
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px; padding: 8px;
+    background: #0b0b0b;
+    border: 1px solid var(--line); border-radius: 6px;
+  }
+  .divmenu.open { display: grid; }
+  .divmenu button {
+    -webkit-appearance: none; appearance: none;
+    min-width: 46px; padding: 6px 7px;
+    border: 1px solid #3b3721; border-radius: 3px;
+    background: #0b0b0b; color: var(--line);
+    font: inherit; letter-spacing: .06em;
+    cursor: pointer;
+  }
+  .divmenu button:hover { border-color: var(--line); }
+  .divmenu button.sel {
+    background: rgb(var(--led)); border-color: rgb(var(--led)); color: #0b0b0b;
+    box-shadow: 0 0 8px 2px rgba(var(--led), .45);
   }
 
  /* ── knob ── */
@@ -422,13 +451,19 @@
       drawKnob(i);
     }
 
+    // the picker's own readout: one lit cell
+    function markDiv(i) {
+      const t = tracks[i];
+      t.divCells.forEach((c, k) => c.classList.toggle("sel", DIVISIONS[k] === t.subdiv));
+    }
+
     // when synced the knob steps through DIVISIONS instead of setting BPM
     function applyDiv(i, idx) {
       const t = tracks[i];
       idx = Math.min(DIVISIONS.length - 1, Math.max(0, idx));
       if (DIVISIONS[idx] === t.subdiv) return; // don't re-snap on every pixel of the drag
       t.subdiv = DIVISIONS[idx];
-      t.sel.value = t.subdiv;
+      markDiv(i);
       drawReadout(i);
       drawKnob(i);
       if (sync) snapToGrid(i, nextBoundary());
@@ -507,14 +542,24 @@
 
       if (i > 0) {
         t.bpmUi = bpmUi;
-        t.divUi = document.createElement("label");
+        // press the display to open the picker
+        t.divUi = document.createElement("button");
         t.divUi.className = "ovl";
-        const sel = document.createElement("select");
-        DIVISIONS.forEach(d => sel.add(new Option(d, d, d === "4.0", d === "4.0")));
-        t.sel = sel; // the knob needs to write back into it
-        sel.onchange = () => applyDiv(i, DIVISIONS.indexOf(sel.value));
-        t.divUi.appendChild(sel);
+        t.divUi.onclick = () => t.menu.classList.toggle("open");
         readout.appendChild(t.divUi);
+
+        // DIVISIONS is length-major, so a 4-wide grid lands one family per column
+        t.menu = document.createElement("div");
+        t.menu.className = "divmenu";
+        t.divCells = DIVISIONS.map((d, k) => {
+          const b = document.createElement("button");
+          b.textContent = d;
+          b.onclick = () => { applyDiv(i, k); t.menu.classList.remove("open"); };
+          t.menu.appendChild(b);
+          return b;
+        });
+        readout.appendChild(t.menu);
+        markDiv(i);
       }
       strip.appendChild(readout);
 
@@ -556,10 +601,23 @@
       for (let i = 1; i < 4; i++) {
         tracks[i].bpmUi.style.display = sync ? "none" : "";
         tracks[i].divUi.style.display = sync ? "" : "none";
+        if (!sync) tracks[i].menu.classList.remove("open"); // leaving sync closes it
       }
       for (let i = 0; i < 4; i++) { drawReadout(i); drawKnob(i); }
     }
     refreshUi();
+
+    // one pair of listeners for all three pickers: click away or Esc closes them.
+    // capture phase, so it lands before the button's own toggle can re-open it
+    document.addEventListener("pointerdown", (e) => {
+      for (let i = 1; i < 4; i++) {
+        const t = tracks[i];
+        if (e.target !== t.divUi && !t.menu.contains(e.target)) t.menu.classList.remove("open");
+      }
+    }, true);
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") for (let i = 1; i < 4; i++) tracks[i].menu.classList.remove("open");
+    });
 
     syncBtn.onclick = () => {
       sync = !sync;
