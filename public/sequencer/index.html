@@ -108,9 +108,9 @@
     border-radius: 6px;
   }
   .digit {
-    --t: 2px;    /* spessore segmento */
+    --t: 2.6px;    /* spessore segmento */
     --l: 20px;   /* lunghezza segmento */
-    --g: 3px;    /* gap tra segmenti adiacenti */
+    --g: 2.2px;    /* gap tra segmenti adiacenti */
     position: relative;
     width: calc(var(--l) + var(--t));
     height: calc(2 * var(--l) + var(--t));
@@ -165,20 +165,27 @@
 
  /* ── knob ── */
   .knob-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  /* same weight/size as the SYNC box */
   .knob-label {
-    font-size: 13px; letter-spacing: .16em;
+    font-size: 15px; font-weight: 700; letter-spacing: .04em;
     text-transform: uppercase; color: var(--line);
+    transform: translateY(-6px); /* lifts the word only, knob stays put */
   }
-  /* the "Tempo" label makes track 1's wrap taller, so its dial centers lower
-     than the others — lift it back by half the label's height. tune the px */
-  .track:first-of-type .knob-wrap { transform: translateY(-14px); }
+  /* the "Tempo" label (19.5px line box) makes track 1's wrap taller, so its dial
+     already sits ~9.75px lower than the empty-label tracks. track 1's tuned lift
+     is -18px, so the others need 18 - 9.75 ≈ 8px to land at the same height. */
+  .knob-wrap { transform: translateY(-5px); }
+  .track:first-of-type .knob-wrap { transform: translateY(-15px); }
   .knob {
     position: relative;
     width: 60px; height: 54px;
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 54'%3E%3Cpath d='M17 3.5h26L57 27 43 50.5H17L3 27Z' fill='%23000' stroke='%23e8e8e8' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E") center / 60px 54px no-repeat;
     cursor: ns-resize; touch-action: none;
   }
-  .knob:active { transform: translateY(1px); }
+  .track:nth-of-type(even) .knob {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 54'%3E%3Cpath d='M17 3.5h26L57 27 43 50.5H17L3 27Z' fill='%23000' stroke='%23e9d45c' stroke-width='3' stroke-linejoin='round'/%3E%3C/svg%3E");
+  }
+  .knob:active { transform: translateY(0.1px); }
 
   /* only the dial turns; the hex bezel stays put */
   .dial {
