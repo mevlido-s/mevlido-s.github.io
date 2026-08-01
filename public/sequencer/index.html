@@ -19,17 +19,55 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* ── transport ── */
+  #transport {
+    display: flex; align-items: center; justify-content: center; gap: 26px;
+  }
   #startstop, #sync, #reset {
     -webkit-appearance: none; appearance: none;
-    margin: 0 5px; padding: 9px 20px;
-    border: 1px solid var(--line); border-radius: 0;
+    margin: 0; padding: 0; border: 0; border-radius: 0;
     background: transparent; color: var(--line);
     font: inherit; letter-spacing: .12em; text-transform: uppercase;
     cursor: pointer;
-    transition: background 120ms linear, color 120ms linear;
   }
-  #startstop:hover, #sync:hover, #reset:hover { background: var(--line); color: #0b0b0b; }
+  #startstop, #sync, #reset {
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  /* fixed-height slot: the SYNC box is taller than the glyphs, and without a
+     shared height its LED would sit lower than the other two */
+  .face { display: flex; align-items: center; justify-content: center; height: 46px; }
+  .face svg { display: block; }
+  /* the icon swap is the whole state readout: idle shows play, running shows pause */
+  #startstop .pause, #startstop.playing .play { display: none; }
+  #startstop.playing .pause { display: block; }
+  #startstop:hover .face, #reset:hover .face, #sync:hover .face { opacity: .65; }
+  #startstop:active, #reset:active, #sync:active { transform: translateY(1px); }
   #startstop:disabled { opacity: .4; cursor: default; }
+
+  /* same LED as the step pads, one per button */
+  .btn-led {
+    width: 26px; height: 26px; border-radius: 50%;
+    background: #3b3721;
+    transition: background 200ms ease-out, box-shadow 200ms ease-out;
+  }
+  #startstop.playing .btn-led,
+  #sync.on .btn-led,
+  #reset.blink .btn-led {
+    background: rgb(var(--led));
+    box-shadow: 0 0 8px 2px rgba(var(--led), .9),
+                0 0 22px 8px rgba(var(--led), .35);
+  }
+  /* reset is momentary, so its LED flashes on rather than latching */
+  #reset.blink .btn-led { transition: none; }
+
+  /* box stays white in both states — the LED below is what reads on/off */
+  .sync-box {
+    padding: 12px 22px; border-radius: 8px;
+    background: var(--line); color: #0b0b0b;
+    font-size: 15px; font-weight: 700; letter-spacing: .04em;
+  }
+
+  #msg { min-height: 18px; margin: 14px 0 0; color: #8a8a8a; }
 
   /* one horizontal strip per track: pads, display, knob */
   .track { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 32px 0; }
@@ -126,14 +164,14 @@
   }
 
  /* ── knob ── */
-  .knob-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .knob-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
   .knob-label {
-    font-size: 10px; letter-spacing: .16em;
+    font-size: 13px; letter-spacing: .16em;
     text-transform: uppercase; color: var(--line);
   }
   /* the "Tempo" label makes track 1's wrap taller, so its dial centers lower
      than the others — lift it back by half the label's height. tune the px */
-  .track:first-of-type .knob-wrap { transform: translateY(-9px); }
+  .track:first-of-type .knob-wrap { transform: translateY(-14px); }
   .knob {
     position: relative;
     width: 60px; height: 54px;
@@ -160,9 +198,26 @@
 </head>
 <body>
   
-  <button id="startstop">Start</button>
-  <button id="sync">Sync: OFF</button>
-  <button id="reset">Reset</button>
+  <div id="transport">
+    <button id="startstop" aria-label="Start">
+      <span class="face">
+        <svg class="play" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M0 0V18.39L18.4 9.20007L0 0Z" fill="currentColor"/></svg>
+        <svg class="pause" width="19" height="19" viewBox="0 0 16 19" fill="none"><path d="M6.13 0H0V18.4H6.13V0Z" fill="currentColor"/><path d="M15.9799 0H9.84998V18.4H15.9799V0Z" fill="currentColor"/></svg>
+      </span>
+      <i class="btn-led"></i>
+    </button>
+    <button id="reset" aria-label="Reset">
+      <span class="face">
+        <svg width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M18.4 0H0V18.4H18.4V0Z" fill="currentColor"/></svg>
+      </span>
+      <i class="btn-led"></i>
+    </button>
+    <button id="sync" aria-pressed="false">
+      <span class="face"><span class="sync-box">Sync</span></span>
+      <i class="btn-led"></i>
+    </button>
+  </div>
+  <p id="msg"></p>
   <div id="tracks"></div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
@@ -481,7 +536,8 @@
     // sync non sync toggle
     const syncBtn = document.getElementById("sync");
     function refreshUi() {
-      syncBtn.textContent = sync ? "Sync: ON" : "Sync: OFF";
+      syncBtn.classList.toggle("on", sync);
+      syncBtn.setAttribute("aria-pressed", String(sync));
       for (let i = 1; i < 4; i++) {
         tracks[i].bpmUi.style.display = sync ? "none" : "";
         tracks[i].divUi.style.display = sync ? "" : "none";
@@ -500,6 +556,12 @@
     };
 
     const startStopBtn = document.getElementById("startstop");
+    const msg = document.getElementById("msg");
+    // icon + LED are driven by one class; label follows for screen readers
+    function setPlaying(on) {
+      startStopBtn.classList.toggle("playing", on);
+      startStopBtn.setAttribute("aria-label", on ? "Stop" : "Start");
+    }
       startStopBtn.onclick = async () => {
       if (navigator.audioSession) navigator.audioSession.type = "playback";
       if (tracks[0].clock.state === "started") { // stop
@@ -515,24 +577,25 @@
           if (t.clock.state === "started") t.clock.stop();
           t.cells.forEach(c => c.classList.remove("play"));
         });
-        startStopBtn.textContent = "Start";
+        setPlaying(false);
         return;
       }
 
       // FIX #3: loading can fail (404, decode error) or just be slow — show a
       // state, catch the rejection, and tell the user instead of dying silently.
       startStopBtn.disabled = true;
-      startStopBtn.textContent = "Loading\u2026";
+      msg.textContent = "Loading\u2026";
       try {
         await Tone.loaded(); // only starting waits for samples; controls work during load
         if (loadError) throw new Error(loadError);
         await Tone.start();
       } catch (err) {
-        startStopBtn.textContent = `Load failed (${err.message || "unknown"}) \u2014 retry`;
+        msg.textContent = `Load failed (${err.message || "unknown"}) \u2014 tap play to retry`;
         startStopBtn.disabled = false;
         return;
       }
       startStopBtn.disabled = false;
+      msg.textContent = "";
 
       clearTransientState(); // FIX #4: belt-and-suspenders, in case stop was skipped
       players.forEach(b => b.rr = 0); // round robin from sample 1 each run
@@ -542,13 +605,28 @@
         t.step = 0;
         if (t.clock.state !== "started") t.clock.start(now);
       });
-      startStopBtn.textContent = "Stop";
+      setPlaying(true);
     };
 
-    document.getElementById("reset").onclick = () => {
+    const resetBtn = document.getElementById("reset");
+    // one flash per reset, fired when the reset actually lands — which when
+    // synced is the next master tick, not the click
+    let blinkTimer = null;
+    function blinkReset(at) {
+      const flash = () => {
+        resetBtn.classList.add("blink");
+        clearTimeout(blinkTimer); // rapid clicks: restart the flash, don't cut it short
+        blinkTimer = setTimeout(() => resetBtn.classList.remove("blink"), 140);
+      };
+      if (at == null) flash();
+      else Tone.Draw.schedule(flash, at);
+    }
+
+    resetBtn.onclick = () => {
       const running = tracks[0].clock.state === "started";
       if (running && sync) { // two different reset: if synch than it's in the next master tick (so that all tracks are aligned
         const when = nextBoundary();
+        blinkReset(when);
         tracks.forEach(t => {
           t.resetAt = when; // zero the step at the boundary
           if (t.snapAt === when) return; // stop/start already queued at this beat (reset or sync toggle)
@@ -557,6 +635,7 @@
           t.clock.start(when);
         });
       } else { // , if not sync than it's immediate (so that the master is reset and the others are free to run on their own)
+        blinkReset(null);
         tracks.forEach(t => { if (t.clock.state === "started") t.clock.stop(); });
         clearTransientState(); // FIX #4: old queued times are meaningless after a hard restart
         tracks.forEach(t => t.step = 0);
