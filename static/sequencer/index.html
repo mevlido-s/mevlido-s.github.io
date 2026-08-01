@@ -19,32 +19,26 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ── transport ── */
+  /*  transport  */
   #transport {
     display: flex; align-items: center; justify-content: center; gap: 26px;
   }
   #startstop, #sync, #reset {
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
     -webkit-appearance: none; appearance: none;
     margin: 0; padding: 0; border: 0; border-radius: 0;
     background: transparent; color: var(--line);
     font: inherit; letter-spacing: .12em; text-transform: uppercase;
     cursor: pointer;
   }
-  #startstop, #sync, #reset {
-    display: flex; flex-direction: column; align-items: center; gap: 16px;
-  }
-  /* fixed-height slot: the SYNC box is taller than the glyphs, and without a
-     shared height its LED would sit lower than the other two */
+  /* Icon SVG */
   .face { display: flex; align-items: center; justify-content: center; height: 46px; }
   .face svg { display: block; }
-  /* the icon swap is the whole state readout: idle shows play, running shows pause */
   #startstop .pause, #startstop.playing .play { display: none; }
   #startstop.playing .pause { display: block; }
   #startstop:hover .face, #reset:hover .face, #sync:hover .face { opacity: .65; }
   #startstop:active, #reset:active, #sync:active { transform: translateY(1px); }
   #startstop:disabled { opacity: .4; cursor: default; }
-
-  /* same LED as the step pads, one per button */
   .btn-led {
     width: 26px; height: 26px; border-radius: 50%;
     background: #3b3721;
@@ -57,10 +51,7 @@
     box-shadow: 0 0 8px 2px rgba(var(--led), .9),
                 0 0 22px 8px rgba(var(--led), .35);
   }
-  /* reset is momentary, so its LED flashes on rather than latching */
   #reset.blink .btn-led { transition: none; }
-
-  /* box stays white in both states — the LED below is what reads on/off */
   .sync-box {
     padding: 12px 22px; border-radius: 8px;
     background: var(--line); color: #0b0b0b;
@@ -73,7 +64,6 @@
   .track { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 32px 0; }
   .steps { display: flex; }
 
-  /* touch-action none: a finger dragging over steps paints instead of scrolling */
   .step {
     position: relative;
     -webkit-appearance: none; appearance: none;
@@ -99,7 +89,7 @@
                 0 0 22px 8px rgba(var(--led), .35);
     transition: none;
   }
-/* ── segment display ── */
+  /* ── segment display ── */
   .readout { position: relative; }
   .seg {
     display: flex; gap: 10px;
@@ -116,8 +106,6 @@
     height: calc(2 * var(--l) + var(--t));
   }
 
-  /* i segmenti spenti non hanno ombra: una box-shadow sfocata viene comunque
-     rasterizzata anche a opacity .03, e qui sono 128 elementi */
   .digit i {
     position: absolute;
     background: rgb(var(--led));
@@ -165,8 +153,7 @@
     font: inherit;
   }
 
-  /* division picker: rows are note lengths, columns are the tuplet families,
-     same black / outline / LED language as the step pads */
+
   .divmenu {
     position: absolute; z-index: 5;
     left: 50%; top: calc(100% + 10px);
@@ -192,19 +179,19 @@
     box-shadow: 0 0 8px 2px rgba(var(--led), .45);
   }
 
- /* ── knob ── */
-  .knob-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-  /* same weight/size as the SYNC box */
+  /* knob  */
+
+  .knob-wrap {
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    transform: translateY(-5px);
+  }
+  .track:first-of-type .knob-wrap { transform: translateY(-15px); }
+
   .knob-label {
     font-size: 15px; font-weight: 700; letter-spacing: .04em;
     text-transform: uppercase; color: var(--line);
-    transform: translateY(-6px); /* lifts the word only, knob stays put */
+    transform: translateY(-6px); 
   }
-  /* the "Tempo" label (19.5px line box) makes track 1's wrap taller, so its dial
-     already sits ~9.75px lower than the empty-label tracks. track 1's tuned lift
-     is -18px, so the others need 18 - 9.75 ≈ 8px to land at the same height. */
-  .knob-wrap { transform: translateY(-5px); }
-  .track:first-of-type .knob-wrap { transform: translateY(-15px); }
   .knob {
     position: relative;
     width: 60px; height: 54px;
@@ -216,7 +203,6 @@
   }
   .knob:active { transform: translateY(0.1px); }
 
-  /* only the dial turns; the hex bezel stays put */
   .dial {
     position: absolute; left: 50%; top: 50%;
     width: 34px; height: 34px; margin: -17px 0 0 -17px;
@@ -252,32 +238,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
   <script>
     const STEPS = 4;
-    // hits per quarter note. Tone's notation can't spell 5- and 7-tuplets
-    // ("5t" would parse as a triplet of fifth-notes), so the rate table is the
-    // source of truth and the strings are just labels.
-    // 7 note lengths x 4 families, named "<length>.<family>": 16.0 = plain 16th,
-    // 16.3 = triplet (3:2), 16.5 = quintuplet (5:4), 16.7 = septuplet (7:4).
-    // The dot rides on the digit before it, so every name fits the 4-digit readout.
     const TUPLETS = { 0: 1, 3: 1.5, 5: 1.25, 7: 1.75 }; // straight, 3-, 5-, 7-tuplet
     const PER_QUARTER = {};
     for (const len of [1, 2, 4, 8, 16, 32, 64])
       for (const [family, ratio] of Object.entries(TUPLETS))
         PER_QUARTER[`${len}.${family}`] = (len / 4) * ratio;
-    // knob order: slowest to fastest note length, each stepping straight ->
-    // triplet -> quintuplet -> septuplet (not strictly by rate: a quintuplet is
-    // slower than the triplet it follows)
     const DIVISIONS = Object.keys(PER_QUARTER);
     const BPM_MIN = 1, BPM_MAX = 800;
 
     // master limiter: keeps 4 samples summing on top of each other from clipping
     const limiter = new Tone.Limiter(-3).toDestination();
 
-    // FIX #3: track load failures per-player so Start can report them.
+    // track load failures per-player so Start can report them.
     let loadError = null;
-    // round robin: one bank of players per track, cycled on each hit.
-    // Counts match the files actually in samples/ (Kick has 3, rest have 4).
+    // round robin
     const SAMPLES = { Kick: 3, Hihat: 4, Snare: 4, Tom: 4 };
-    const PANS = { Kick: 0, Hihat: -0.2, Snare: 0, Tom: 0.3 }; // -1 = hard L, 1 = hard R
+    const PANS = { Kick: 0, Hihat: -0.2, Snare: 0, Tom: 0.3 }; // PANNING
     const players = Object.entries(SAMPLES).map(([n, count]) => {
       const pan = new Tone.Panner(PANS[n]).connect(limiter);
       const bank = Array.from({ length: count }, (_, k) => new Tone.Player({
@@ -299,14 +275,10 @@
       pattern: Array(STEPS).fill(false),
       step: 0,
       clock: null,
-      resetAt: null, // zero the step at this time (was implicit before; FIX #4 clears it)
-      snapAt: null,  // stop/start already queued at this time (FIX #4 clears it)
+      resetAt: null, // zero the step at this time (cleared by clearTransientState)
+      snapAt: null,  // stop/start already queued at this time (cleared by clearTransientState)
     }));
 
-    // FIX #2: masterNextTick is 0 before the first tick fires (and stale after a
-    // stop), so never schedule against it raw. This clamps to "no earlier than
-    // now", and callers that align several tracks compute it ONCE and pass it
-    // down so every track lands on the same boundary.
     function nextBoundary() {
       return Math.max(masterNextTick, Tone.now());
     }
@@ -323,9 +295,6 @@
       const s = t.step;
       if (t.pattern[s]) {
         const bank = players[i];
-        // choke: samples are 2s long, way past one step. A single Player used
-        // to cut its own tail on retrigger; with a bank the others must be
-        // stopped explicitly or tails ring over silent steps.
         bank.forEach(p => { if (p.state === "started") p.stop(time); });
         bank[bank.rr].start(time);
         bank.rr = (bank.rr + 1) % bank.length;
@@ -343,9 +312,7 @@
       tracks[i].clock.frequency.setValueAtTime(freq(i), time);
     }
 
-    // FIX #2: takes the boundary as a parameter instead of reading
-    // masterNextTick directly, so a caller aligning tracks 1-3 uses one shared
-    // value (and never a time in the past).
+
     function snapToGrid(i, at) {
       const c = tracks[i].clock;
       if (tracks[0].clock.state !== "started") { c.frequency.value = freq(i); return; }
@@ -356,15 +323,13 @@
       c.start(at);
     }
 
-    // FIX #4: one place that wipes every piece of transient scheduling state.
-    // Called on both stop and start so nothing queued in a previous run leaks
-    // into the next one.
+
     function clearTransientState() {
       pendingBpm = null;
       tracks.forEach(t => { t.resetAt = null; t.snapAt = null; });
     }
 
-    // clockkkk
+    // master clock: applies a queued BPM change, plays its step, then go
     tracks[0].clock = new Tone.Clock((time) => {
       if (pendingBpm !== null) {
         tracks[0].bpm = pendingBpm;
@@ -380,12 +345,11 @@
     for (let i = 1; i < 4; i++)
       tracks[i].clock = new Tone.Clock((time) => playStep(i, time), freq(i));
 
-   // ── seven-segment readout ────────────────────────────────
-    // which of the 7 segments light for each character we can show
+    // ── seven-segment readout ────────────────────────────────
     const GLYPHS = {
       "0":"abcdef", "1":"bc",     "2":"abdeg",  "3":"abcdg",   "4":"bcfg",
       "5":"acdfg",  "6":"acdefg", "7":"abc",    "8":"abcdefg", "9":"abcdfg",
-      "n":"ceg",    "t":"defg",   " ":""
+      " ":"",
     };
 
     function buildSeg(parent) {
@@ -406,8 +370,6 @@
       });
     }
 
-    // a "." attaches to the digit before it instead of taking a cell of its own,
-    // so "120.5" fits in four digits. Short strings are right-aligned.
     function setSeg(digits, str) {
       const glyphs = [];
       for (const ch of String(str).toLowerCase()) {
@@ -422,18 +384,18 @@
       });
     }
 
+    function shownBpm(i) {
+      return (i === 0 && pendingBpm !== null) ? pendingBpm : tracks[i].bpm;
+    }
+
     function drawReadout(i) {
       const t = tracks[i];
-      if (i > 0 && sync) { setSeg(t.seg, t.subdiv); return; } // "16n", "8t", ...
-      // master shows a queued BPM change before its tick lands
-      const v = (i === 0 && pendingBpm !== null) ? pendingBpm : t.bpm;
+      if (i > 0 && sync) { setSeg(t.seg, t.subdiv); return; } // "4.0", "16.3", ...
+      const v = shownBpm(i);
       setSeg(t.seg, Number.isInteger(v) ? String(v) : v.toFixed(1));
     }
 
     // the BPM write itself, shared by the typed input and the knob drag.
-    // Assumes v is already valid — each caller decides what invalid means.
-// the BPM write itself, shared by the typed input and the knob drag.
-    // Assumes v is already valid — each caller decides what invalid means.
     function applyBpm(i, v) {
       const t = tracks[i];
       if (i === 0) {
@@ -470,19 +432,14 @@
     }
 
     // 3deg per BPM, and the divisions spread over 300deg however many there are
-    // (10 * 40deg would put the last one back at 0). It's an endless encoder, so
-    // the absolute angle means nothing — it's there to show the thing moved
     function drawKnob(i) {
       const t = tracks[i];
       const deg = (i > 0 && sync)
         ? DIVISIONS.indexOf(t.subdiv) * (300 / (DIVISIONS.length - 1))
-        : ((i === 0 && pendingBpm !== null) ? pendingBpm : t.bpm) * 3;
+        : shownBpm(i) * 3;
       t.dial.style.transform = `rotate(${deg}deg)`;
     }
 
-    // ui stuff to change later
-    // drag-paint: the first cell pressed decides the value (its own toggle),
-    // every cell entered while the button is held gets that same value
     let paint = null; // null = not dragging
     window.addEventListener("pointerup", () => paint = null);
     window.addEventListener("pointercancel", () => paint = null);
@@ -501,8 +458,6 @@
         b.className = "step";
         const set = (v) => { t.pattern[s] = v; b.classList.toggle("on", v); };
         b.onpointerdown = (e) => {
-          // touch implicitly captures the pointer on the first cell, which would
-          // swallow pointerenter on the others — release it so the drag paints
           b.releasePointerCapture(e.pointerId);
           e.preventDefault();
           paint = !t.pattern[s];
@@ -525,14 +480,11 @@
       bpmUi.className = "ovl";
       bpmUi.innerHTML = `<input type="number" value="120" min="${BPM_MIN}" max="${BPM_MAX}">`;
       t.input = bpmUi.querySelector("input");
-      // the field is invisible, so mirror keystrokes onto the segments as they land
       t.input.oninput = () => setSeg(t.seg, t.input.value.slice(0, 5) || " ");
       t.input.onchange = (e) => {
         const v = parseFloat(e.target.value);
-        // FIX #1: min/max attributes don't validate typed input, so do it here.
-        // Bad value (NaN, empty, out of range) -> revert the field, change nothing.
         if (!Number.isFinite(v) || v < BPM_MIN || v > BPM_MAX) {
-          e.target.value = (i === 0 && pendingBpm !== null) ? pendingBpm : t.bpm;
+          e.target.value = shownBpm(i);
           drawReadout(i);
           return;
         }
@@ -548,7 +500,6 @@
         t.divUi.onclick = () => t.menu.classList.toggle("open");
         readout.appendChild(t.divUi);
 
-        // DIVISIONS is length-major, so a 4-wide grid lands one family per column
         t.menu = document.createElement("div");
         t.menu.className = "divmenu";
         t.divCells = DIVISIONS.map((d, k) => {
@@ -563,12 +514,9 @@
       }
       strip.appendChild(readout);
 
-      // knob: drag up/down for +/- 1 BPM per pixel
-// knob: drag up/down — BPM, or the division when synced
       t.knob = document.createElement("div");
       t.knob.className = "knob-wrap";
-      // ponytail: label only on track 0, but the empty span stays on the others
-      // so every knob keeps the same height and the strips stay aligned
+      // label only on track 0, but the empty span stays on the others
       t.knob.innerHTML = `<span class="knob-label">${i === 0 ? "Tempo" : ""}</span><div class="knob"><i class="dial"></i></div>`;
       t.dial = t.knob.querySelector(".dial");
       const knob = t.knob.querySelector(".knob");
@@ -577,9 +525,7 @@
         const y0 = e.clientY;
         // decided once at pointerdown, so toggling sync mid-drag can't switch modes
         const stepDiv = i > 0 && sync;
-        const start = stepDiv
-          ? DIVISIONS.indexOf(t.subdiv)
-          : ((i === 0 && pendingBpm !== null) ? pendingBpm : t.bpm);
+        const start = stepDiv ? DIVISIONS.indexOf(t.subdiv) : shownBpm(i);
         knob.onpointermove = (ev) => {
           const d = y0 - ev.clientY;
           if (stepDiv) applyDiv(i, start + Math.round(d / 14)); // 14px per division
@@ -591,7 +537,7 @@
 
       drawReadout(i);
       drawKnob(i);
-   });
+    });
 
     // sync non sync toggle
     const syncBtn = document.getElementById("sync");
@@ -601,14 +547,12 @@
       for (let i = 1; i < 4; i++) {
         tracks[i].bpmUi.style.display = sync ? "none" : "";
         tracks[i].divUi.style.display = sync ? "" : "none";
-        if (!sync) tracks[i].menu.classList.remove("open"); // leaving sync closes it
+        if (!sync) tracks[i].menu.classList.remove("open"); 
       }
       for (let i = 0; i < 4; i++) { drawReadout(i); drawKnob(i); }
     }
     refreshUi();
 
-    // one pair of listeners for all three pickers: click away or Esc closes them.
-    // capture phase, so it lands before the button's own toggle can re-open it
     document.addEventListener("pointerdown", (e) => {
       for (let i = 1; i < 4; i++) {
         const t = tracks[i];
@@ -621,7 +565,7 @@
 
     syncBtn.onclick = () => {
       sync = !sync;
-      // FIX #2: compute the boundary once so all three slaves realign on the
+      // compute the boundary once so all three slaves realign on the
       // exact same instant, instead of each calling Tone.now() separately.
       const at = nextBoundary();
       for (let i = 1; i < 4; i++) snapToGrid(i, at);
@@ -635,12 +579,9 @@
       startStopBtn.classList.toggle("playing", on);
       startStopBtn.setAttribute("aria-label", on ? "Stop" : "Start");
     }
-      startStopBtn.onclick = async () => {
+    startStopBtn.onclick = async () => {
       if (navigator.audioSession) navigator.audioSession.type = "playback";
       if (tracks[0].clock.state === "started") { // stop
-        // FIX #4: a BPM change that never reached its tick shouldn't be lost or
-        // fire stale on the next run — apply it now, while stopped, then wipe
-        // all queued resetAt/snapAt times (they point into a dead timeline).
         if (pendingBpm !== null) {
           tracks[0].bpm = pendingBpm;
           for (let k = 0; k < 4; k++) tracks[k].clock.frequency.value = freq(k);
@@ -654,12 +595,11 @@
         return;
       }
 
-      // FIX #3: loading can fail (404, decode error) or just be slow — show a
-      // state, catch the rejection, and tell the user instead of dying silently.
+ // debbuging 
       startStopBtn.disabled = true;
       msg.textContent = "Loading\u2026";
       try {
-        await Tone.loaded(); // only starting waits for samples; controls work during load
+        await Tone.loaded(); 
         if (loadError) throw new Error(loadError);
         await Tone.start();
       } catch (err) {
@@ -670,10 +610,10 @@
       startStopBtn.disabled = false;
       msg.textContent = "";
 
-      clearTransientState(); // FIX #4: belt-and-suspenders, in case stop was skipped
+      clearTransientState(); // belt-and-suspenders, in case stop was skipped
       players.forEach(b => b.rr = 0); // round robin from sample 1 each run
       const now = Tone.now() + 0.1; // margin so all clocks align on the same start
-      masterNextTick = now; // FIX #2: valid from the moment we start, not after tick #1
+      masterNextTick = now; // valid from the moment we start, not after tick #1
       tracks.forEach(t => {
         t.step = 0;
         if (t.clock.state !== "started") t.clock.start(now);
@@ -682,8 +622,6 @@
     };
 
     const resetBtn = document.getElementById("reset");
-    // one flash per reset, fired when the reset actually lands — which when
-    // synced is the next master tick, not the click
     let blinkTimer = null;
     function blinkReset(at) {
       const flash = () => {
@@ -697,7 +635,7 @@
 
     resetBtn.onclick = () => {
       const running = tracks[0].clock.state === "started";
-      if (running && sync) { // two different reset: if synch than it's in the next master tick (so that all tracks are aligned
+      if (running && sync) {
         const when = nextBoundary();
         blinkReset(when);
         tracks.forEach(t => {
@@ -707,14 +645,14 @@
           t.clock.stop(when); // stop AT the boundary, nothing silenced early
           t.clock.start(when);
         });
-      } else { // , if not sync than it's immediate (so that the master is reset and the others are free to run on their own)
+      } else {
         blinkReset(null);
         tracks.forEach(t => { if (t.clock.state === "started") t.clock.stop(); });
-        clearTransientState(); // FIX #4: old queued times are meaningless after a hard restart
+        clearTransientState(); // old queued times are meaningless after a hard restart
         tracks.forEach(t => t.step = 0);
         if (running) {
           const now = Tone.now() + 0.1;
-          masterNextTick = now; // FIX #2: same as start — keep the boundary valid
+          masterNextTick = now; // same as start — keep the boundary valid
           tracks.forEach(t => t.clock.start(now));
         }
       }
