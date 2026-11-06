@@ -24,18 +24,15 @@
 {{ end }}
 
 <script>
-// Handle page transitions including back/forward navigation
-let isNavigating = false;
+document.documentElement.classList.add('page-transition-ready');
 
-// Trigger fade-in as early as possible
+let navigationTimer;
+let navigationTransitionEnd;
+
 document.addEventListener('DOMContentLoaded', function() {
-  if (!isNavigating) {
-    setTimeout(() => {
-      requestAnimationFrame(() => {
-        document.body.classList.add('page-loaded');
-      });
-    }, 20);
-  }
+  requestAnimationFrame(() => {
+    document.body.classList.add('page-loaded');
+  });
   
   // Fade in video if present
   const video = document.getElementById('video-background');
@@ -90,7 +87,12 @@ window.addEventListener('load', function() {
 // Handle browser back/forward buttons
 window.addEventListener('pageshow', function(event) {
   if (event.persisted) {
-    isNavigating = false;
+    clearTimeout(navigationTimer);
+    if (navigationTransitionEnd) {
+      document.body.removeEventListener('transitionend', navigationTransitionEnd);
+      navigationTransitionEnd = null;
+    }
+    document.body.classList.remove('page-leaving');
     document.body.classList.add('page-loaded');
 
     const video = document.getElementById('video-background');
@@ -98,44 +100,72 @@ window.addEventListener('pageshow', function(event) {
   }
 });
 
-window.addEventListener('pagehide', function() {
-  isNavigating = true;
-});
+document.addEventListener('click', function(event) {
+  if (
+    event.defaultPrevented ||
+    event.button !== 0 ||
+    event.metaKey ||
+    event.ctrlKey ||
+    event.shiftKey ||
+    event.altKey ||
+    !(event.target instanceof Element)
+  ) {
+    return;
+  }
 
+  const link = event.target.closest('a[href]');
+  if (
+    !link ||
+    link.classList.contains('glightbox') ||
+    link.hasAttribute('download') ||
+    (link.target && link.target.toLowerCase() !== '_self') ||
+    document.body.classList.contains('page-leaving') ||
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  ) {
+    return;
+  }
 
-document.addEventListener('DOMContentLoaded', function() {
-  const links = document.querySelectorAll('a');
-  
-  links.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
+  const destination = new URL(link.href, window.location.href);
+  if (
+    destination.origin !== window.location.origin ||
+    !['http:', 'https:'].includes(destination.protocol) ||
+    destination.href === window.location.href ||
+    (
+      destination.pathname === window.location.pathname &&
+      destination.search === window.location.search &&
+      destination.hash
+    )
+  ) {
+    return;
+  }
 
-       //  skip glightbox links the fucking DIO PORCO GLIBOX
-      if (this.classList.contains('glightbox')) {
-        return;
-      }
-      
-      if (!href || 
-          href.startsWith('#') || 
-          href.startsWith('http') || 
-          href.startsWith('mailto:') || 
-          href.startsWith('tel:') ||
-          this.target === '_blank') {
-        return;
-      }
-      
-      e.preventDefault();
-      isNavigating = true;
-      
-      const video = document.getElementById('video-background');
-      if (video) video.classList.remove('loaded');
-      
-      document.body.classList.remove('page-loaded');
-      
-      setTimeout(() => {
-        window.location.href = href;
-      }, 150);
-    });
-  });
+  event.preventDefault();
+  document.body.classList.add('page-leaving');
+
+  const navigate = function() {
+    window.location.assign(destination.href);
+  };
+  navigationTransitionEnd = function(transitionEvent) {
+    if (transitionEvent.target !== document.body || transitionEvent.propertyName !== 'opacity') {
+      return;
+    }
+
+    clearTimeout(navigationTimer);
+    document.body.removeEventListener('transitionend', navigationTransitionEnd);
+    navigationTransitionEnd = null;
+    navigate();
+  };
+
+  document.body.addEventListener('transitionend', navigationTransitionEnd);
+  const transitionDuration = getComputedStyle(document.body).transitionDuration.split(',')[0].trim();
+  const durationInMs = Number.parseFloat(transitionDuration) * (transitionDuration.endsWith('ms') ? 1 : 1000);
+  const fallbackDelay = Number.isFinite(durationInMs) ? durationInMs + 50 : 300;
+  navigationTimer = window.setTimeout(function() {
+    if (navigationTransitionEnd) {
+      document.body.removeEventListener('transitionend', navigationTransitionEnd);
+      navigationTransitionEnd = null;
+    }
+    navigate();
+  }, fallbackDelay);
 });
 </script>

@@ -1,16 +1,25 @@
 /* Page Transitions */
 body {
   background-color: #72561d;
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
   font-family: 'Atkinson Hyperlegible', sans-serif !important;
   font-size: 18px;
   line-height: 1.6;
   /* filter: blur(0.5px) brightness(0.7); */
 }
 
-body.page-loaded {
-  opacity: 1;
+@media (prefers-reduced-motion: no-preference) {
+  html.page-transition-ready body {
+    opacity: 0;
+    transition: opacity 220ms ease;
+  }
+
+  html.page-transition-ready body.page-loaded {
+    opacity: 1;
+  }
+
+  html.page-transition-ready body.page-leaving {
+    opacity: 0;
+  }
 }
 
 /* transitions */
